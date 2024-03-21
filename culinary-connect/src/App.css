@@ -1,4 +1,103 @@
-.App {
+html {
+  background-color: #fdf8d6;
+  margin: 0px;
+}
+
+.menu {
+  color: white;
+   /* REMINDER CHANGE WHITE TO SOME GRAY */
+  background-color: #d62828;
+  display: flex;
+  justify-self: center;
+  justify-content: space-evenly; 
+  align-items: center;
+  width: 95%;
+  height: 6vh;
+  margin: 1% auto;
+  border-radius: 30px;
+  box-shadow: rgba(41, 44, 46, 0.2) 0px 10px 24px;
+}
+
+.searchBar {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.searchBarForm {
+  border-radius: 50%;
+  display: flex;
+  height: 35px;
+  position: relative;
+}
+
+.searchInput {
+  width: 100%;
+  border-radius: 20px;
+  border: 1px solid gainsboro;
+  padding: 8px 12px;
+}
+
+.searchBarForm button {
+  position: absolute; 
+  right: 0px; 
+  height: 34px; 
+  width: 34px; 
+  border: none;
+  background-color: rebeccapurple;
+  color: white;
+  border-radius: 20px 20px 20px 20px;
+}
+
+.main {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  height: 90vh;
+  width: 100%;
+}
+.mainText {
+  display: flex;
+  width: 50%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+}
+.mainText h1 {
+  font-size: 5rem;
+  margin-bottom: 0px;
+}
+.mainText p {
+  font-size: 2rem;
+  padding: 5rem;
+  text-align: justify;
+}
+
+.mainText button {
+  width: 10em;
+  height: 4em;
+  border-radius: 50px;
+  border: 0px;
+  background-color: #d62828;
+  color: aliceblue;
+  font-weight: 600;
+  font-size: 1.3em;
+  padding: 0px;
+  box-shadow: rgba(41, 44, 46, 0.2) 0px 10px 24px;
+}
+.mainPic {
+  width: 50%;
+  padding: 5%;
+  
+}
+
+.pizzaIlustration {
+  width: 50%;
+  padding: 5%;
+}
+
+/* .App {
   text-align: center;
 }
 
@@ -35,4 +134,4 @@
   to {
     transform: rotate(360deg);
   }
-}
+} */
