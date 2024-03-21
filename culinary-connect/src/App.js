@@ -1,11 +1,12 @@
 import Menu from "./components/Menu";
 import pizzaPic from "./assets/pizza-ilustration.png";
-import Footer from "./components/Footer";
+// import Footer from "./components/Footer";
+import RecipeItem from "./components/RecipeItem";
 
 function App() {
   return (
     <div className="appBody">
-      <Menu />
+      {/* <Menu />
       <div className="main">
         <div className="mainText">
           <h1>CulinaryConnect</h1>
@@ -14,12 +15,13 @@ function App() {
         </div>
         
         <img src={pizzaPic} className="pizzaIlustration" alt="Pizza Ilustration"></img>
-      </div>
-      <Footer />
+      </div> */}
+      {/* <Footer /> */}
+      <RecipeItem></RecipeItem>
     </div>
   );
 }
-export default App
+export default App;
 
 // import logo from './logo.svg';
 // import './App.css';
