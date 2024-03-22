@@ -1,11 +1,14 @@
-import '../App.css'
+import '../App.css';
 import pancakePlaceholder from "../assets/pancakePlaceholder.jpg";
 
 function RecipeItem() {
     return (
         <div className='recipeItem'>
             <div className='cardImgContainer'>
-                <img src={pancakePlaceholder} alt='Photo of Pancakes'></img>
+                <img src={pancakePlaceholder} alt='Pancakes'></img>
+                <div className='cookingTime'>
+                    <p>20 min</p>
+                </div>
             </div>
             <h2 className='recipeTitle'>Title</h2>
             <div className='tagSlider'>
@@ -14,7 +17,8 @@ function RecipeItem() {
                 <span className='tagItem'>Item</span>
                 <span className='tagItem'>Item</span>
                 <span className='tagItem'>Item</span>
-                <span className='tagItem'>Item</span><span className='tagItem'>Item</span>
+                <span className='tagItem'>Item</span>
+                <span className='tagItem'>Item</span>
                 <span className='tagItem'>Item</span>
                 <span className='tagItem'>Item</span>
                 <span className='tagItem'>Item</span>
