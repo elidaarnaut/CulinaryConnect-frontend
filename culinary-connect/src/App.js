@@ -1,24 +1,10 @@
-import Menu from "./components/Menu";
-import pizzaPic from "./assets/pizza-ilustration.png";
-// import Footer from "./components/Footer";
-import RecipeItem from "./components/RecipeItem";
+import Homepage1 from "./pages/Homepage1";
+import Homepage2 from "./pages/Homepage2";
 
 function App() {
   return (
-    <div className="appBody">
-      {/* <Menu />
-      <div className="main">
-        <div className="mainText">
-          <h1>CulinaryConnect</h1>
-          <p>Discover endless culinary inspiration with our collection of delicous recipes from all areound the globe</p>
-          <button>Join us!</button>
-        </div>
-        
-        <img src={pizzaPic} className="pizzaIlustration" alt="Pizza Ilustration"></img>
-      </div> */}
-      {/* <Footer /> */}
-      <RecipeItem></RecipeItem>
-    </div>
+    // <Homepage1></Homepage1>
+    <Homepage2></Homepage2>
   );
 }
 export default App;

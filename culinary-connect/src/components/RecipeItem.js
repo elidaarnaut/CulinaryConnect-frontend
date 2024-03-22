@@ -1,4 +1,4 @@
-import '../App.css'
+import '../App.css';
 import pancakePlaceholder from "../assets/pancakePlaceholder.jpg";
 
 function RecipeItem() {

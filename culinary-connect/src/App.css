@@ -1,7 +1,9 @@
 html {
-  background-color: #fdf8d6;
+  background-color: #dee7e9;
   margin: 0px;
 }
+
+/* MENU CSS */
 
 .menu {
   color: white;
@@ -18,10 +20,19 @@ html {
   box-shadow: rgba(41, 44, 46, 0.2) 0px 10px 24px;
 }
 
+/* SEARCH BAR CSS */
+
 .searchBar {
   width: 100%;
   display: flex;
   justify-content: center;
+  margin-top: 5vh;
+  margin-bottom: 10vh;
+}
+
+.searchBarForm>button>img{
+  width: 90%;
+  filter: invert(100%);
 }
 
 .searchBarForm {
@@ -32,7 +43,7 @@ html {
 }
 
 .searchInput {
-  width: 100%;
+  width: 50vh;
   border-radius: 20px;
   border: 1px solid gainsboro;
   padding: 8px 12px;
@@ -44,10 +55,12 @@ html {
   height: 34px; 
   width: 34px; 
   border: none;
-  background-color: rebeccapurple;
+  background-color: #d62828;
   color: white;
   border-radius: 20px 20px 20px 20px;
 }
+
+/* USED IN HOMEPAGE 1 */
 
 .main {
   display: flex;
@@ -97,8 +110,11 @@ html {
   padding: 5%;
 }
 
+/* FOOTER CSS */
+
 .footer hr {
   width: 95%;
+  margin-top: 50px;
 }
 
 .footer {
@@ -106,14 +122,16 @@ html {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 5vh;
+  height: fit-content;
 }
+
+/* RECIPE ITEM CSS */
 
 .recipeItem {
   display: flex;
   width: 20%;
   height: fit-content;
-  background-color: #f3e5e5;
+  background-color: #f8f8f8;
   border-radius: 20px;
   align-items: center;
   justify-content: center;
@@ -121,9 +139,7 @@ html {
   flex-direction: column;
   padding-top: 1vi;
   margin-top: 20px;
-  
-
-}
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;}
 
 .recipeTitle {
   align-self: start;
@@ -170,8 +186,7 @@ html {
   margin-bottom: 25px;
   width: 80%;
   overflow-x: auto;
-  
-  
+    
 }
 
 .tagSlider::-webkit-scrollbar {
@@ -179,12 +194,11 @@ html {
 }
 
 .tagItem {
-  background-color: #f3e5e5;
+  background-color: #ffc7b1;
   color: #333;
   width: auto;
   padding: 5px 10px;
   border-radius: 20px;
-  border: 1px solid black;
   padding-left: 10px;
   padding-right: 10px;
   margin-right: 10px; /* Adjust margin between tags */
@@ -192,6 +206,77 @@ html {
   opacity: 1;
   transition: opacity 0.5s ease;
 }
+
+/* SIDE MENU CSS */
+
+.sideMenu {
+  width: 15vi;
+  height: 100vh;
+  background-color: #f8f8f8;
+  border-radius: 0px 25px 25px 0px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5vh;
+
+}
+
+.sideMenuItem {
+  display: flex;
+  height: 1lh;
+  flex-direction: row;
+  align-items: center;
+  margin: 5px 0;
+  
+}
+
+.sideMenuItem img {
+  height: 1lh;
+  padding-right: 5px;
+}
+
+.sideMenuItem p {
+  font-size: 1.5em;
+  font-weight: 600;
+}
+
+.logoText {
+  font-size: 2em;
+  font-weight: 700;
+}
+.appBodyHP2 {
+  display: flex;
+  flex-direction: column;
+  height: auto;
+}
+
+.trendingRecipes {
+  display: flex;
+  flex-direction: row;
+  overflow-x: auto;
+  gap: 30px;
+  padding: 15px;
+}
+
+.trendingRecipes::-webkit-scrollbar {
+  display: none; /* Hide the scrollbar */
+}
+
+.next2SideMenu {
+  margin-left: 17vi;
+  margin-bottom: 30px;
+}
+
+.HP2Title {
+  color: #ce2121;
+  font-size: 50px;
+}
+
 
 
 /* .App {
