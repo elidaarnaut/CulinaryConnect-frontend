@@ -1,8 +1,8 @@
 import Menu from "../components/Menu";
 import pizzaPic from "../assets/pizza-ilustration.png";
-// import Footer from "../components/Footer";
+import Footer from "../components/Footer";
 
-function Homepage() {
+function Homepage1() {
   return (
     <div className="appBody">
       <Menu />
@@ -15,8 +15,8 @@ function Homepage() {
         
         <img src={pizzaPic} className="pizzaIlustration" alt="Pizza Ilustration"></img>
       </div>
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 }
-export default Homepage;
+export default Homepage1;
