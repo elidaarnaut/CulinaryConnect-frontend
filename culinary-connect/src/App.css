@@ -120,15 +120,19 @@ html {
   margin: auto;
   flex-direction: column;
   padding-top: 1vi;
+  margin-top: 20px;
+  
 
 }
 
 .recipeTitle {
   align-self: start;
   padding-left: 10%;
+  margin-bottom: 0px;
 }
 
 .cardImgContainer {
+  position: relative;
   width: 75%;
   height: 10vi;
   border: 1px solid rgb(177, 177, 177);
@@ -142,12 +146,32 @@ html {
   height: 100%;
 }
 
+.cookingTime {
+  position: absolute;
+  bottom: 0; /* Position it at the top */
+  height: 20%;
+  left: 0; /* Position it at the left */
+  background-color: rgba(255, 255, 255, 0.7); /* Adjust the background color and opacity */
+  padding: 0px 15px;
+  border-radius: 15px 15px 0px 0; /* Adjust the border-radius */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cookingTime p {
+  font-weight: 600;
+}
+
 .tagSlider {
   display: flex;
+  margin: auto;
   margin-top: 15px;
-  margin-bottom: 15px;
-  width: 100%;
+  margin-bottom: 25px;
+  width: 80%;
   overflow-x: auto;
+  
+  
 }
 
 .tagSlider::-webkit-scrollbar {
@@ -157,11 +181,18 @@ html {
 .tagItem {
   background-color: #f3e5e5;
   color: #333;
+  width: auto;
   padding: 5px 10px;
   border-radius: 20px;
+  border: 1px solid black;
+  padding-left: 10px;
+  padding-right: 10px;
   margin-right: 10px; /* Adjust margin between tags */
   white-space: nowrap; /* Prevent tags from wrapping to new line */
+  opacity: 1;
+  transition: opacity 0.5s ease;
 }
+
 
 /* .App {
   text-align: center;
