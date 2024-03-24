@@ -9,7 +9,7 @@ function Homepage1() {
       <div className="main">
         <div className="mainText">
           <h1>CulinaryConnect</h1>
-          <p>Discover endless culinary inspiration with our collection of delicous recipes from all areound the globe</p>
+          <p>Discover endless culinary inspiration with our collection of delicous recipes from all around the globe</p>
           <button>Join us!</button>
         </div>
         
