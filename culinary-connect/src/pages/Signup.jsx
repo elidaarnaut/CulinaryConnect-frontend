@@ -1,4 +1,5 @@
 import { React, useState } from 'react';
+import { Link } from 'react-router-dom';
 import "./LoginForm.css";
 import { FaUser, FaLock, FaLockOpen  } from "react-icons/fa";
 
@@ -31,7 +32,7 @@ const Signup = () => {
             </div>
             <button type='submit'>Sign Up</button>
             <div className='register-link'>
-                <p>Already Have an a Account ? <a herf='#'>Login</a></p>
+                <p>Already Have an a Account ? <a herf='#'><Link to="/login">Login</Link></a></p>
             </div>
         </form>
     </div>
