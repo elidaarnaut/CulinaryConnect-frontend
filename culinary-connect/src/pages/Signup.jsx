@@ -3,11 +3,12 @@ import { Link } from 'react-router-dom';
 import "./LoginForm.css";
 import { FaUser, FaLock, FaLockOpen  } from "react-icons/fa";
 
+
 const Signup = () => {
   const [password, setPassword] = useState("");
   const [visible, setVisible] = useState(false);
     return (
-        <div><div className='wrapper'>
+        <div className='bodyDiv'><div className='wrapper'>
         <form>
             <h1>Sign Up</h1>
             <div className='input-box'>
@@ -30,9 +31,9 @@ const Signup = () => {
                   }
                 </div>
             </div>
-            <button type='submit'>Sign Up</button>
+            <Link to="/login"><button type='submit'>Sign Up</button></Link>
             <div className='register-link'>
-                <p>Already Have an a Account ? <a herf='#'><Link to="/login">Login</Link></a></p>
+                <p>Already Have an a Account? <a herf='#'><Link to="/login">Login</Link></a></p>
             </div>
         </form>
     </div>

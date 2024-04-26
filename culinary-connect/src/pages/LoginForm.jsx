@@ -1,13 +1,26 @@
 import { React, useState } from 'react';
+import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+//  TO DO: replace link feature from login button with the navigate feature upon successful login
+
 import "./LoginForm.css";
 import { FaUser, FaLock, FaLockOpen  } from "react-icons/fa";
 
-const LoginFrom = () => {
+const LoginForm = () => {
     const [password, setPassword] = useState("");
     const [visible, setVisible] = useState(false);
+    const navigate = useNavigate();
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        // TO DO:
+        // Add your logic for user authentication here
+        // If the login is successful
+        navigate('/homepage2'); // Use navigate to redirect to Homepage2
+    };
     return (
-        <div><div className='wrapper'>
-        <form>
+        <div className='bodyDiv'><div className='wrapper'>
+        <form onSubmit={handleSubmit}>
             <h1>Login</h1>
             <div className='input-box'>
                 <input type='email' placeholder='Username' required />
@@ -28,7 +41,7 @@ const LoginFrom = () => {
             <button type='submit'>Login</button>
 
             <div className='register-link'>
-                <p>Don't have an account? <a herf='#'>Join Us</a></p>
+                <p>Don't have an account? <a herf='#'><Link to="/signup">Join Us</Link></a></p>
             </div>
         </form>
     </div></div>
@@ -36,4 +49,4 @@ const LoginFrom = () => {
     );
 };
 
-export default LoginFrom;
+export default LoginForm;

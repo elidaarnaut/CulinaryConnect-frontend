@@ -1,4 +1,5 @@
 import React from 'react';
+import "../App.css";
 import { Link } from 'react-router-dom';
 import Menu from "../components/Menu";
 import pizzaPic from "../assets/pizza-ilustration.png";

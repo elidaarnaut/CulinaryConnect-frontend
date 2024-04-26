@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 
- body{
+.bodyDiv{
     font-family: 'Poppins', sans-serif;
     -webkit-font-smothing: antialiased;
     -moz-osx-font-smothing: grayscale;
@@ -12,7 +12,9 @@
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    /* background-image: url(../assets/2.jpg); */
+    background-image: url(../assets/2.jpg);
+    margin: auto;
+   
 } 
 
 .wrapper{

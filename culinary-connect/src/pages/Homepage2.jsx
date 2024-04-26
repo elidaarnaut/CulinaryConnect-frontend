@@ -1,3 +1,5 @@
+import React from "react";
+import "../App.css";
 import SideMenu from "../components/SideMenu";
 import Search from "../components/Search";
 import RecipeItems from "../components/RecipeItem";
