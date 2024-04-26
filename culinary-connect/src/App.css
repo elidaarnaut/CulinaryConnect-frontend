@@ -249,6 +249,8 @@ html {
   font-size: 2em;
   font-weight: 700;
 }
+
+ /* HOMEPAGE 2 */
 .appBodyHP2 {
   display: flex;
   flex-direction: column;
@@ -277,18 +279,33 @@ html {
   font-size: 50px;
 }
 
-
-
-/* .App {
-  text-align: center;
+.activeLink {
+  background-color: #f0f0f0; /* Light gray background for the active link */
+  color: #d62828; /* Red color for the text, adjust as needed */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.sideMenu a, .sideMenu a:visited, .sideMenu a:hover {
+  text-decoration: none; /* Removes underline from all states */
+  color: black; /*Ensures text color consistency */ 
 }
+.sideMenu a:active {
+  color: #ce2121;
+}
+ 
+ /* EXPLORE PAGE */
 
-@media (prefers-reduced-motion: no-preference) {
+
+ .exploreIntemLayout .recipeItem {
+  margin: 0;
+ }
+
+ .exploreIntemLayout {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+ }
+
+/* @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
@@ -316,4 +333,4 @@ html {
   to {
     transform: rotate(360deg);
   }
-} */
+}  */
