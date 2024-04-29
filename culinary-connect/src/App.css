@@ -27,12 +27,16 @@ html {
   display: flex;
   justify-content: center;
   margin-top: 5vh;
-  margin-bottom: 10vh;
+  margin-bottom: 5vh;
 }
 
 .searchBarForm>button>img{
-  width: 90%;
+  width: 60%;
   filter: invert(100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
 }
 
 .searchBarForm {

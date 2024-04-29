@@ -1,11 +1,11 @@
-import React from 'react';
+import React from "react";
 import SideMenu from '../components/SideMenu';
 import RecipeItem from '../components/RecipeItem';
 import SortBy from '../components/SortBy';
 import Search from '../components/Search';
 import "../App.css";
 
-function ExplorePage() {
+function FavoritesPage() {
     return(
         <div className="appBodyHP2">
             <SideMenu></SideMenu>
@@ -28,4 +28,4 @@ function ExplorePage() {
         </div>
     );
 }
-export default ExplorePage;
+export default FavoritesPage;

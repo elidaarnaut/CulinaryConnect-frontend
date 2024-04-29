@@ -6,9 +6,10 @@ function SortBy() {
            <label>
                 <span className="sortByLabel">Sort by</span>  
                 <select name="sortBy">
+                    <option value="mostRelevant">Most Relevant</option>
                     <option value="newest">Newest</option>
                     <option value="oldest">Oldest</option>
-                    <option value="mostRelevant">Most Relevant</option>
+                    
                 </select>
            </label>
         </div>
