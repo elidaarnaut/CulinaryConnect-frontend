@@ -131,7 +131,8 @@ html {
   display: flex;
 
   flex: 0 1 23%; /* Each item will take up 23% of the container width */
-  margin: 10px; /* Adds some space around each item */
+  box-sizing: border-box;
+  margin: 10px;
 
   width: 20%;
   height: fit-content;
@@ -299,19 +300,47 @@ html {
  
  /* EXPLORE PAGE */
 
+.exploreItemLayout {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  justify-content: flex-start;
+  padding: 10px;
+}
 
- .exploreItemLayout .recipeItem {
-    margin: 0;
- }
+#exploreTitle {
+  margin-left: 15px;
+  margin-top: 3vh;
+}
+.next2SideMenu>hr{
+  width: 95%;
+  margin: auto;
+  margin-top: 15px;
+  color: #333;
+}
 
- .exploreItemLayout {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between; /* Adjust this as needed, can be space-between etc. */
-    gap: 20px; /* Optional: adds space between rows and items */
-    /* margin-left: 10px; */
-    margin-right: 25px;
- }
+ /* SORT BY FEATURE */
+.sortByDiv {
+  display: flex;
+  justify-content: flex-end;
+  margin: 10px;
+  margin-right: 25px;
+  flex-direction: row;
+}
+
+.sortByDiv select {
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  background-color: white;
+  cursor: pointer;
+}
+
+.sortByLabel {
+  margin-right: 8px;
+}
+
+
 
 /* @media (prefers-reduced-motion: no-preference) {
   .App-logo {
