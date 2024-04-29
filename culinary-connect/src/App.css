@@ -129,13 +129,17 @@ html {
 
 .recipeItem {
   display: flex;
+
+  flex: 0 1 23%; /* Each item will take up 23% of the container width */
+  margin: 10px; /* Adds some space around each item */
+
   width: 20%;
   height: fit-content;
   background-color: #f8f8f8;
   border-radius: 20px;
   align-items: center;
   justify-content: center;
-  margin: auto;
+  /* margin: auto; */
   flex-direction: column;
   padding-top: 1vi;
   margin-top: 20px;
@@ -255,6 +259,7 @@ html {
   display: flex;
   flex-direction: column;
   height: auto;
+  width: 100%; /* Adjust based on your layout needs */
 }
 
 .trendingRecipes {
@@ -295,14 +300,17 @@ html {
  /* EXPLORE PAGE */
 
 
- .exploreIntemLayout .recipeItem {
-  margin: 0;
+ .exploreItemLayout .recipeItem {
+    margin: 0;
  }
 
- .exploreIntemLayout {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+ .exploreItemLayout {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* Adjust this as needed, can be space-between etc. */
+    gap: 20px; /* Optional: adds space between rows and items */
+    /* margin-left: 10px; */
+    margin-right: 25px;
  }
 
 /* @media (prefers-reduced-motion: no-preference) {

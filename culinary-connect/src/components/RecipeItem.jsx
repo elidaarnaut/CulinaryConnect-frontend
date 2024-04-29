@@ -11,20 +11,20 @@ function RecipeItem() {
                 </div>
             </div>
             <h2 className='recipeTitle'>Title</h2>
-            <div className='tagSlider'>
-                <span className='tagItem'>Item</span>
-                <span className='tagItem'>Item</span>
-                <span className='tagItem'>Item</span>
-                <span className='tagItem'>Item</span>
-                <span className='tagItem'>Item</span>
-                <span className='tagItem'>Item</span>
-                <span className='tagItem'>Item</span>
-                <span className='tagItem'>Item</span>
-                <span className='tagItem'>Item</span>
-                <span className='tagItem'>Item</span>
-                <span className='tagItem'>Item</span>
-                <span className='tagItem'>Item</span>
-            </div>
+           <div className='tagSlider'>
+               <span className='tagItem'>Item</span>
+               <span className='tagItem'>Item</span>
+               <span className='tagItem'>Item</span>
+               <span className='tagItem'>Item</span>
+               <span className='tagItem'>Item</span>
+               <span className='tagItem'>Item</span>
+               <span className='tagItem'>Item</span>
+               <span className='tagItem'>Item</span>
+               <span className='tagItem'>Item</span>
+               <span className='tagItem'>Item</span>
+               <span className='tagItem'>Item</span>
+               <span className='tagItem'>Item</span>
+           </div>
         </div>
     );
 }
