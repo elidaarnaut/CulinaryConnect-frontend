@@ -1,7 +1,7 @@
 import React from "react";
 import SideMenu from '../components/SideMenu';
 import RecipeItem from '../components/RecipeItem';
-import SortBy from '../components/SortBy';
+// import SortBy from '../components/SortBy';
 import Search from '../components/Search';
 import "../App.css";
 
@@ -11,9 +11,9 @@ function FavoritesPage() {
             <SideMenu></SideMenu>
             <div className="next2SideMenu">
                 <Search></Search>
-                <h1 className="HP2Title" id='exploreTitle'>Explore</h1>
+                <h1 className="HP2Title" id='exploreTitle'>Favorites</h1>
                 <hr />
-                <SortBy></SortBy>
+                {/* <SortBy></SortBy> */}
                 <div className='exploreItemLayout'>
                     <RecipeItem></RecipeItem>
                     <RecipeItem></RecipeItem>

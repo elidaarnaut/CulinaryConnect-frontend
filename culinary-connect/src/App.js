@@ -5,6 +5,8 @@ import Signup from "./pages/Signup";
 import Login from "./pages/LoginForm";
 import ExplorePage from "./pages/ExplorePage";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import FavoritesPage from "./pages/FavoritesPage";
+import ProfilePage from "./pages/ProfilePage";
 
 function App() {
   return (
@@ -14,7 +16,9 @@ function App() {
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} /> 
         <Route path="/homepage2" element={<Homepage2 />} /> 
-        <Route path="/explore" element={<ExplorePage />} /> 
+        <Route path="/explore" element={<ExplorePage />} />
+        <Route path="/favorites" element={<FavoritesPage />} /> 
+        <Route path="/profile" element={<ProfilePage />} /> 
       </Routes>
     </Router>
   );

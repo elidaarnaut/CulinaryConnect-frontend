@@ -344,6 +344,27 @@ html {
   margin-right: 8px;
 }
 
+/* PROFILE PAGE */
+
+.banner {
+  height: 30vh;
+  background-image: url("./assets/banner.jpg");
+  background-size: cover;
+}
+
+.banner img {
+  width: 100%;
+}
+
+.profilePhoto {
+  width: 120px;
+  position: relative;
+  bottom: 60px;
+  left: 60px;
+  border: 5px solid #ce2121;
+  border-radius: 50%;
+  padding: 0px;
+}
 
 
 /* @media (prefers-reduced-motion: no-preference) {
