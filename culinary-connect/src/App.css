@@ -280,6 +280,8 @@ html {
 }
 
 .next2SideMenu {
+  display: flex;
+  flex-direction: column;
   margin-left: 17vi;
   margin-bottom: 30px;
 }
@@ -357,53 +359,27 @@ html {
 }
 
 .profilePhoto {
-  width: 120px;
-  position: relative;
-  bottom: 60px;
-  left: 60px;
+  width: 150px;
+  position: relative; 
+  bottom: 75px; 
   border: 5px solid #ce2121;
   border-radius: 50%;
-  padding: 0px;
+  margin: auto;
 }
 
 .profileName {
-  font-size: larger;
-  /* padding-left: 30px;
-  padding-right: 50%; */
-  width: 50%;
-  color: #ce2121;
-  text-align: center;
-  margin-right: 10%;
-  margin-left: 3%;
-  
-}
-
-.profilePersonalInfo {
-  display: flex;
-  flex-direction: row;
-  position: relative;
-  bottom: 30px;
-  align-items: baseline;
-  margin-right: 30px;
-}
-
-.profileBio {
- 
-  border-radius: 20px;
-  background-color: #f8f8f8;
-  padding: 25px;
-  box-shadow: rgba(41, 44, 46, 0.2) 0px 10px 24px;
-}
-
-/* .profileBio>p {
   font-size: xx-large;
-} */
-
-.bioDescription {
-  font-size: 20px;
+  text-align: center;
+  position: relative;
+  bottom: 60px;
+  color: #ce2121; 
+  margin-bottom: -40px; 
 }
-.bioTitle {
-  font-size: 30px;
+
+.profileRecipeTitle {
+  color: #333;
+  padding-left: 30px;
+  font-size: x-large;
 }
 
 

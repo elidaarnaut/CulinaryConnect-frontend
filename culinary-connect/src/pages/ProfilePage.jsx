@@ -13,19 +13,9 @@ function ProfilePage() {
             </div>
             <div className="next2SideMenu">
                 <img className='profilePhoto' src={profilePhoto} alt="" />
-                <div className='profilePersonalInfo'>
-                    <div className='profileName'>
-                        <h1 >Jane Doe</h1>
-                    </div>
-                    {/* <h1 className='profileName'>Jane Doe</h1> */}
-                    <div className='profileBio'>
-                        <p className='bioTitle'>Bio</p>
-                        <br />
-                        <p className='bioDescription'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque non nisl ut arcu pulvinar hendrerit eu eu lorem. Nullam ultricies lectus magna, a auctor libero dictum ut. Nam imperdiet leo.</p>
-                    </div>
-                </div>
+                <h1 className='profileName'>Jane Doe</h1>
+                <h2 className='profileRecipeTitle'>Jane's Recipes</h2>
                 <hr />
-                <br />
                 <div className='exploreItemLayout'>
                     <RecipeItem></RecipeItem>
                     <RecipeItem></RecipeItem>
