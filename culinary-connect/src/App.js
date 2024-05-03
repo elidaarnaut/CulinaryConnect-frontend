@@ -7,6 +7,7 @@ import ExplorePage from "./pages/ExplorePage";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import FavoritesPage from "./pages/FavoritesPage";
 import ProfilePage from "./pages/ProfilePage";
+import SettingsPage from "./pages/SettingsPage";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path="/explore" element={<ExplorePage />} />
         <Route path="/favorites" element={<FavoritesPage />} /> 
         <Route path="/profile" element={<ProfilePage />} /> 
+        <Route path="/settings" element={<SettingsPage />} /> 
       </Routes>
     </Router>
   );
