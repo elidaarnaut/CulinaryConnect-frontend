@@ -3,6 +3,10 @@ html {
   margin: 0px;
 }
 
+.appBody{
+  width: 100%;
+}
+
 /* MENU CSS */
 
 .menu {
@@ -75,36 +79,37 @@ html {
 }
 .mainText {
   display: flex;
-  width: 50%;
+  width: 45%;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 
 }
 .mainText h1 {
-  font-size: 5em;
+  font-size: 60px;
   margin-bottom: 0px;
 }
 .mainText p {
-  font-size: 2rem;
+  font-size: 30px;
   padding: 5rem;
-  text-align: justify;
+  text-align: left;
 }
 
 .mainText button {
-  width: 10em;
-  height: 4em;
+  width: fit-content;
+  padding: 15px 25px;
+  height: fit-content;
   border-radius: 50px;
   border: 0px;
   background-color: #d62828;
   color: aliceblue;
   font-weight: 600;
   font-size: 1.3em;
-  padding: 0px;
+  /* padding: 0px; */
   box-shadow: rgba(41, 44, 46, 0.2) 0px 10px 24px;
 }
 .mainPic {
-  width: 50%;
+  width: 45%;
   padding: 5%;
   
 }
@@ -219,7 +224,7 @@ html {
 /* SIDE MENU CSS */
 
 .sideMenu {
-  width: 15vi;
+  width: 15%;
   height: 100vh;
   background-color: #f8f8f8;
   border-radius: 0px 25px 25px 0px;
@@ -274,10 +279,13 @@ html {
   overflow-x: auto;
   gap: 30px;
   padding: 15px;
+  /* overflow: hidden; */
+  width: 95%;
 }
 
 .trendingRecipes::-webkit-scrollbar {
-  display: none; /* Hide the scrollbar */
+  display: none; 
+  /* Hide the scrollbar */ 
 }
 
 .next2SideMenu {
@@ -385,6 +393,214 @@ html {
   font-size: x-large;
 }
 
+.next2SideMenuSettings {
+  width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: row;
+  position: relative;
+  left: 20%;
+  /* top: 60px; */
+  height: calc(100vh - 60px);
+  margin-top: 60px;
+}
+
+.settingsMenu {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 120px;
+  color: #333;
+  height: 100vh;
+}
+.sMenuContent {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+  width: 80%;
+  text-align: center;
+  /* font-family: 'Montserrat', Arial, Helvetica, sans-serif; */
+  font-weight: 600;
+  color: #333;
+}
+.sMenuContent hr {
+  width: 100%;
+}
+
+.sMenuItem{
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.settingsContents {
+  width: calc(85% - 125px);
+  min-height: 100vh;
+  overflow: auto;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  color: #333;
+
+}
+.accSettings {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  /* align-items: flex-start; */
+  margin-top: 60px;
+}
+
+.functionHeading {
+  font-size: 22px;
+  font-weight: 600;
+}
+
+
+.majorHeading {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.settingsText {
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.settingsButton{
+  font-size: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  width: fit-content;
+  margin: 10px 0px;
+  background-color: #d62828;
+  color: #fff;
+  font-weight: 700;
+  border: 0px;
+  border-radius: 20px;
+
+}
+
+.hrSetting {
+  height: 80%;
+  margin: 0px;
+}
+
+.accSettings hr{
+  width: 100%;
+  margin: 15px 0px;
+}
+
+
+.next2SideMenuSettings {
+  width: 85%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: row;
+  position: relative;
+  left: 15%;
+  height: 100vh;
+  margin: 0px;
+
+}
+
+.appBodySettingsS {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  /* justify-content: start; */
+}
+
+.settingsProfilePic {
+  width: 150px;
+}
+
+.ProfilePicSettings {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ProfilePicText {
+  width: calc(100% - 200px);
+}
+
+.link  {
+  text-decoration: none;
+  color: #333;
+}
+
+.link:visited {
+  text-decoration: none;
+  color: #333;
+}
+
+.link:hover {
+  color: #D03D18;
+}
+
+.saveChangesDiv {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+.input-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  border: 2px solid #fff;
+  background-color: #fff;
+  border-radius: 15px;
+  padding: 5px 10px;
+  width: 50%;
+}
+
+.input-container input:focus{
+  background-color: white;
+} 
+
+#nickname {
+  border: none;
+  outline: none;
+  flex-grow: 1;
+  border-radius: 10px;
+  padding: 8px 10px;
+  font-size: 16px;
+  background-color: #fff;
+}
+
+.clear-button {
+  background: none;
+  border: none;
+  color: #D03D18;
+  cursor: pointer;
+  font-size: 20px;
+  outline: none;
+}
+
+.nicknameLabel {
+  margin-bottom: 10px;
+  margin-right: 30px;
+}
+
+.nicknameSettings {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
 
 /* @media (prefers-reduced-motion: no-preference) {
   .App-logo {
