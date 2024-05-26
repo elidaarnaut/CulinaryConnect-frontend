@@ -8,7 +8,6 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import FavoritesPage from "./pages/FavoritesPage";
 import ProfilePage from "./pages/ProfilePage";
 import SettingsPage from "./pages/SettingsPage";
-import SettingsPage2 from "./pages/SettingsPage2";
 import SettingsPage3 from "./pages/SettingsPage3";
 
 function App() {
@@ -23,7 +22,6 @@ function App() {
         <Route path="/favorites" element={<FavoritesPage />} /> 
         <Route path="/profile" element={<ProfilePage />} /> 
         <Route path="/settings" element={<SettingsPage />} /> 
-        <Route path="/settings2" element={<SettingsPage2 />} /> 
         <Route path="/settings3" element={<SettingsPage3 />} /> 
 
       </Routes>

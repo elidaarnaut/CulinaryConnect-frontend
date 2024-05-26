@@ -9,8 +9,8 @@ function SettingsMenu(){
             <div className="sMenuContent">
                 <Link to="/settings" className="link sMenuItem"><p>Account</p></Link>
                 <hr />
-                <Link to="/settings2" className="link sMenuItem"><p>Profile</p></Link>
-                <hr />
+                {/* <Link to="/settings2" className="link sMenuItem"><p>Profile</p></Link>
+                <hr /> */}
                 <Link to="/settings3" className="link sMenuItem"><p>Support and Help</p></Link>
             </div>
         </div>
