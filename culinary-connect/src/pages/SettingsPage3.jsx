@@ -6,8 +6,11 @@ import "../App.css";
 
 function SettingsPage3() {
     return(
-        <div className="appBodySettingsS">
+        <div className="appBodySettings">
             <SideMenu></SideMenu>
+            <div className="next2SM">
+
+            </div>
             <div className="next2SideMenuSettings">
                 <p>Settings Page</p>
                 <hr />

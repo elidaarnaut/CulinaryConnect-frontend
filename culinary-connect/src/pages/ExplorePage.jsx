@@ -9,21 +9,25 @@ function ExplorePage() {
     return(
         <div className="appBodyHP2">
             <SideMenu></SideMenu>
-            <div className="next2SideMenu">
-                <Search></Search>
-                <h1 className="HP2Title" id='exploreTitle'>Explore</h1>
-                <hr />
-                <SortBy></SortBy>
-                <div className='exploreItemLayout'>
-                    <RecipeItem></RecipeItem>
-                    <RecipeItem></RecipeItem>
-                    <RecipeItem></RecipeItem>
-                    <RecipeItem></RecipeItem>
-                    <RecipeItem></RecipeItem>
-                    <RecipeItem></RecipeItem>
-                    <RecipeItem></RecipeItem>
+             {/* the div below is to center the next2sideMenu content  */}
+            <div className='next2SM'>
+                <div className="next2SideMenu">
+                    <Search></Search>
+                    <h1 className="HP2Title" id='exploreTitle'>Explore</h1>
+                    <hr />
+                    <SortBy></SortBy>
+                    <div className='exploreItemLayout'>
+                        <RecipeItem></RecipeItem>
+                        <RecipeItem></RecipeItem>
+                        <RecipeItem></RecipeItem>
+                        <RecipeItem></RecipeItem>
+                        <RecipeItem></RecipeItem>
+                        <RecipeItem></RecipeItem>
+                        <RecipeItem></RecipeItem>
+                    </div>
                 </div>
             </div>
+            
             
         </div>
     );

@@ -9,21 +9,24 @@ function FavoritesPage() {
     return(
         <div className="appBodyHP2">
             <SideMenu></SideMenu>
-            <div className="next2SideMenu">
-                <Search></Search>
-                <h1 className="HP2Title" id='exploreTitle'>Favorites</h1>
-                <hr />
-                {/* <SortBy></SortBy> */}
-                <div className='exploreItemLayout'>
-                    <RecipeItem></RecipeItem>
-                    <RecipeItem></RecipeItem>
-                    <RecipeItem></RecipeItem>
-                    <RecipeItem></RecipeItem>
-                    <RecipeItem></RecipeItem>
-                    <RecipeItem></RecipeItem>
-                    <RecipeItem></RecipeItem>
+            <div className="next2SM">
+                <div className="next2SideMenu">
+                    <Search></Search>
+                    <h1 className="HP2Title" id='exploreTitle'>Favorites</h1>
+                    <hr />
+                    {/* <SortBy></SortBy> */}
+                    <div className='exploreItemLayout'>
+                        <RecipeItem></RecipeItem>
+                        <RecipeItem></RecipeItem>
+                        <RecipeItem></RecipeItem>
+                        <RecipeItem></RecipeItem>
+                        <RecipeItem></RecipeItem>
+                        <RecipeItem></RecipeItem>
+                        <RecipeItem></RecipeItem>
+                    </div>
                 </div>
             </div>
+            
             
         </div>
     );

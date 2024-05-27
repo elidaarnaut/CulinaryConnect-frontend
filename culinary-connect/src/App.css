@@ -291,10 +291,18 @@ html {
   /* Hide the scrollbar */
 }
 
+.next2SM {
+  width: 85%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
 .next2SideMenu {
   display: flex;
   flex-direction: column;
-  width: 80%;
+  width: 95%;
   /* margin-left: 15vi;
   margin-bottom: 30px;
   padding-left: 20px;
@@ -398,16 +406,19 @@ html {
 }
 
 .next2SideMenuSettings {
-  width: 85%;
+  width: 95%;
   display: flex;
-  align-items: center;
+  flex-direction: row;
+  min-height: 100vh;
+  overflow: visible;
+  /* align-items: center;
   justify-content: space-evenly;
   flex-direction: row;
   position: relative;
   left: 20%;
   /* top: 60px; */
-  height: calc(100vh - 60px);
-  margin-top: 60px;
+  /* height: calc(100vh - 60px);
+  margin-top: 60px;  */
 }
 
 .settingsMenu {
