@@ -5,10 +5,12 @@ import SideMenu from "../components/SideMenu";
 import Search from "../components/Search";
 import RecipeItems from "../components/RecipeItem";
 import Footer from "../components/Footer";
+import TopMenu from "../components/TopMenu";
 
 function Homepage2() {
   return (
     <div className="appBodyHP2">
+      <TopMenu></TopMenu>
       <SideMenu></SideMenu>
       <div className="next2SM">
         <div className="next2SideMenu">

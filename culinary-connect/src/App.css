@@ -27,6 +27,19 @@ html {
   box-shadow: rgba(41, 44, 46, 0.2) 0px 10px 24px;
 }
 
+.menuPic {
+  height: 30px;
+  margin-left: 20px;
+}
+
+.topMenu {
+  width: 100%;
+  height: 6vh;
+  background-color: #d62828;
+  color: #fff;
+  display: none;
+}
+
 /* SEARCH BAR CSS */
 
 .searchBar {
@@ -634,6 +647,10 @@ html {
   align-items: center;
 }
 
+
+
+
+
 @media only screen and (max-width: 768px){
    /* MENU FROM HOMEPAGE1 */
   .menu {
@@ -689,11 +706,100 @@ html {
   }
 
   .footer {
-    position: fixed;
-    bottom: 0;
+    /* position: fixed; */
+    /* bottom: 0; */
     height: 6vh;
-    margin-bottom: 10px;
+    /* margin-bottom: 10px; */
   }
+
+  .topMenu {
+    width: 100%;
+    height: 6vh;
+    background-color: #d62828;
+    color: #fff;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+  }
+
+  .appBodyHP2 {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  .sideMenu {
+    display: none;
+  }
+
+  /* TOP MENU CSS */
+
+  .nav {
+    background: #d62828;
+    height: 80px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+  }
+
+  .nav-icon, .sidebar-nav {
+    /* margin-left: 2rem; */
+    font-size: 2rem;
+    height: 80px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    z-index: 100;
+  }
+
+  .sidebar-nav {
+    background: #d62828;
+    width: 250px;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: -100%;
+    transition: 350ms;
+    z-index: 10;
+  }
+
+  .sidebar-wrap {
+    width: 100%;
+  }
+  .sidebar-nav {
+    transition: left 0.3s;
+    left: -100%; /* Initially hidden */
+  }
+
+  .sidebar-nav.show {
+    left: 0; /* Shown when sidebar is toggled */
+  }
+
+
+  .sidebar-link {
+    display: flex;
+    color: #e1e9fc;
+    justify-content: start;
+    align-items: center;
+    padding: 20px;
+    list-style: none;
+    height: 60px;
+    text-decoration: none;
+    font-size: 18px;
+  }
+
+  .sidebar-link:hover {
+    background: #252831;
+    border-left: 4px solid #632ce4;
+    cursor: pointer;
+  }
+
+
+
 }
 
 /* @media (prefers-reduced-motion: no-preference) {
