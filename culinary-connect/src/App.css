@@ -451,7 +451,7 @@ html {
 }
 
 .settingsContents {
-  width: calc(85% - 125px);
+  width: 100%;
   min-height: 100vh;
   overflow: auto;
   display: flex;
@@ -466,7 +466,7 @@ html {
   height: auto;
   flex-direction: column;
   align-items: flex-start;
-  padding-top: 80px;
+  /* padding-top: 80px; */
   /* padding-bottom: 80px; */
 }
 
@@ -517,15 +517,16 @@ html {
 
 
 .next2SideMenuSettings {
-  width: 85%;
+  width: 95%;
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  /* align-items: center;
   justify-content: space-evenly;
   flex-direction: row;
   position: relative;
   left: 15%;
   height: 100vh;
-  margin: 0px;
+  margin: 0px; */
 
 }
 
@@ -533,7 +534,9 @@ html {
   width: 100%;
   display: flex;
   flex-direction: row;
-  align-items: flex-start;
+  min-height: 100vh;
+  overflow: visible;
+  /* align-items: flex-start; */
   /* justify-content: start; */
 }
 

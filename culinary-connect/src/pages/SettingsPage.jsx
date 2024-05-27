@@ -9,11 +9,14 @@ import "../App.css";
 
 function SettingsPage() {
     return(
-        <div className="appBodySettings">
+        <div className="appBodyHP2">
             <SideMenu></SideMenu>
             <div className='next2SM'>
-                <div className="next2SideMenuSettings">
-                    {/* <Search></Search> */}
+
+                <div className="next2SideMenu">
+                    <Search></Search> 
+                    <h1 className="HP2Title">Settings</h1>
+                    <hr />
                     <div className="settingsContents">
                         <div className="accSettings">
                             <br />
