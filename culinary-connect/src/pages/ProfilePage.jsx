@@ -3,11 +3,14 @@ import SideMenu from '../components/SideMenu';
 import banner from "../assets/banner.jpg";
 import profilePhoto from "../assets/ProfilePhoto.svg";
 import RecipeItem from '../components/RecipeItem';
+import TopMenu from '../components/TopMenu';
+
 import "../App.css";
 
 function ProfilePage() {
     return(
         <div className="appBodyHP2">
+            <TopMenu></TopMenu>
             <SideMenu></SideMenu>
             
             <div className='next2SM'>

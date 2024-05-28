@@ -161,7 +161,7 @@ html {
 .recipeItem {
   display: flex;
 
-  flex: 0 1 23%; /* Each item will take up 23% of the container width */
+  /* flex: 0 1 23%; Each item will take up 23% of the container width */
   box-sizing: border-box;
   margin: 10px;
 
@@ -647,8 +647,16 @@ html {
   align-items: center;
 }
 
+.nav  {
+  display: none;
+}
+.navDiv {
+  display: none;
+}
 
-
+.sideBarDiv{
+  display: none;
+}
 
 
 @media only screen and (max-width: 768px){
@@ -706,20 +714,21 @@ html {
   }
 
   .footer {
-    /* position: fixed; */
-    /* bottom: 0; */
+    position: fixed;
+    bottom: 0;
     height: 6vh;
-    /* margin-bottom: 10px; */
+    margin-bottom: 10px;
   }
 
   .topMenu {
-    width: 100%;
+    width: 100vw;
     height: 6vh;
     background-color: #d62828;
     color: #fff;
     display: flex;
     justify-content: left;
     align-items: center;
+    z-index: 99;
   }
 
   .appBodyHP2 {
@@ -733,72 +742,133 @@ html {
     display: none;
   }
 
-  /* TOP MENU CSS */
+  /* HOMEPAGE 1 */
 
-  .nav {
-    background: #d62828;
-    height: 80px;
+  .HP2Title {
+    font-size: 35px;
+  }
+
+  .HP2Title:first-of-type {
+    margin-top: 30px;
+  }
+
+  .searchBar {
+    width: 60%;
+    position: relative;
+    margin-bottom: 0px;
+  }
+
+  .searchBarForm {
+    width: 100%;
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
+  }
+
+  .searchBarForm button {
+    display: flex;
+    justify-self: flex-end;
+  }
+
+  .searchInput {
+    width: calc(100% + 34px);
+  }
+
+  .next2SideMenu {
     align-items: center;
+  }
+
+  .recipeItem {
+    width: 40%;
+  }
+
+  .trendingRecipes {
+    gap: 20px;
+  }
+
+  .cardImgContainer {
+    border-radius: 15px;
+    box-shadow: none;
+    height: 15vi;
+    margin-top: 5px;
+  }
+
+  .recipeTitle {
+    font-size: 20px;
+  }
+
+  .tagSlider {
+    margin-top: 10px;
+  }
+  
+  .tagItem {
+    padding: 3px 10px;
+  }
+
+  .next2SM {
     width: 100%;
   }
 
-  .nav-icon, .sidebar-nav {
-    /* margin-left: 2rem; */
-    font-size: 2rem;
-    height: 80px;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    z-index: 100;
-  }
-
-  .sidebar-nav {
-    background: #d62828;
-    width: 250px;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    position: fixed;
-    top: 0;
-    left: -100%;
-    transition: 350ms;
-    z-index: 10;
-  }
-
-  .sidebar-wrap {
+  /* EXPLORE PAGE  */
+  .exploreItemLayout{
     width: 100%;
-  }
-  .sidebar-nav {
-    transition: left 0.3s;
-    left: -100%; /* Initially hidden */
+    justify-content:space-evenly ;
   }
 
-  .sidebar-nav.show {
-    left: 0; /* Shown when sidebar is toggled */
+  /* PROFILE PAGE  */
+
+  .banner {
+    height: 20vh;
   }
 
+  .banner img {
+    height: 100%;
+  }
 
-  .sidebar-link {
+  .profileRecipeTitle{
+    padding-left: 0%;
+  }
+
+  .sideBarDiv {
     display: flex;
-    color: #e1e9fc;
-    justify-content: start;
-    align-items: center;
-    padding: 20px;
-    list-style: none;
-    height: 60px;
+    flex-direction: column;
+    width: 100vw;
+    height: 100%;
+    background-color: #333;
+    transition: transform 0.3s ease;
+    transform: translateX(-200%); /* Initially hidden */
+    z-index: 50;
+    display: none;
+    padding-bottom: 10px;
+    padding-top: 10px;
     text-decoration: none;
-    font-size: 18px;
+
+  }
+  
+  .sideBarDiv.show {
+    transform: translateX(0); /* Slide in when 'show' class is added */
   }
 
-  .sidebar-link:hover {
-    background: #252831;
-    border-left: 4px solid #632ce4;
-    cursor: pointer;
+  .show {
+    display: flex;
+    color: #ccc;
+    font-size: 20px;
+    text-decoration: none;
+    justify-content: center;
+    align-items: center;
   }
 
+  .link {
+    color: #ccc;
+  }
 
+  .link:visited {
+    text-decoration: none;
+    color: #ccc;
+  }
+
+ 
+  
+  
 
 }
 

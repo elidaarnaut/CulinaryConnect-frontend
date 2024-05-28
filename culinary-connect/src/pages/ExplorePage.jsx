@@ -3,11 +3,13 @@ import SideMenu from '../components/SideMenu';
 import RecipeItem from '../components/RecipeItem';
 import SortBy from '../components/SortBy';
 import Search from '../components/Search';
+import TopMenu from '../components/TopMenu';
 import "../App.css";
 
 function ExplorePage() {
     return(
         <div className="appBodyHP2">
+            <TopMenu></TopMenu>
             <SideMenu></SideMenu>
              {/* the div below is to center the next2sideMenu content  */}
             <div className='next2SM'>

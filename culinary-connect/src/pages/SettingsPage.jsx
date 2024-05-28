@@ -1,15 +1,17 @@
 import React from 'react';
 import SideMenu from '../components/SideMenu';
 import Search from '../components/Search';
-import SettingsMenu from '../components/SettingsMenu';
 import profilePic from '../assets/ProfilePhoto.svg';
 import Footer from '../components/Footer';
+import TopMenu from '../components/TopMenu';
+
 
 import "../App.css";
 
 function SettingsPage() {
     return(
         <div className="appBodyHP2">
+            <TopMenu></TopMenu>
             <SideMenu></SideMenu>
             <div className='next2SM'>
 
