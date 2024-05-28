@@ -1,1 +1,1 @@
-# CulinaryConnect
+# CulinaryConnect-frontend
