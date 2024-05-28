@@ -26,11 +26,16 @@ html {
   border-radius: 30px;
   box-shadow: rgba(41, 44, 46, 0.2) 0px 10px 24px;
 }
+.menuPic:first-of-type{
+  margin-left: 20px;
+  margin-right: 0px;
+}
 
 .menuPic {
   height: 30px;
-  margin-left: 20px;
+  margin-right: 20px;
 }
+
 
 .topMenu {
   width: 100%;
@@ -155,6 +160,23 @@ html {
   height: 6vh;
 
 }
+
+.addRecipeButton {
+  background-color: #d62828;
+  color: #fff;
+  padding: 15px 15px;
+  border: 0px;
+  border-radius: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+  font-weight: 600;
+  font-size: 15px;
+}
+
+
 
 /* RECIPE ITEM CSS */
 
@@ -726,7 +748,7 @@ html {
     background-color: #d62828;
     color: #fff;
     display: flex;
-    justify-content: left;
+    justify-content: space-between;
     align-items: center;
     z-index: 99;
   }
@@ -841,6 +863,8 @@ html {
     padding-bottom: 10px;
     padding-top: 10px;
     text-decoration: none;
+    gap: 7px;
+    font-weight: 500;
 
   }
   
@@ -866,7 +890,20 @@ html {
     color: #ccc;
   }
 
+  /* SETTINGS PAGE */
+
+  .ProfilePicSettings {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .ProfilePicText {
+    width: 100%;
+  }
  
+  .next2SideMenu {
+    width: 90%;
+  }
   
   
 

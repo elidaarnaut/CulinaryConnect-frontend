@@ -7,12 +7,14 @@ import explore from "../assets/explore.png";
 import heart from "../assets/heart.png";
 import user from "../assets/user.png";
 import settings from "../assets/settings.png";
+import logout from "../assets/exit.svg";
 
 
 function SideMenu() {
     return (
         <div className='sideMenu'>
             {/* <p className='logoText'>Culinary Connect</p> */}
+            <button className='addRecipeButton'>Add Recipe</button>
             <NavLink to="/homepage2" className='sideMenuItem' activeClassName="activeLink">
                 <img src={home} alt=''></img>
                 <p>Home</p>
@@ -37,7 +39,12 @@ function SideMenu() {
                 <img src={settings} alt=''></img>
                 <p>Settings</p>
             </NavLink>
+            {/* <hr className='hrSideMenu'/> */}
 
+            <NavLink to="" className='sideMenuItem' activeClassName="activeLink">
+                <img src={logout} alt=''></img>
+                <p>Log out</p>
+            </NavLink>
         </div>
     );
 }

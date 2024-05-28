@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import menuPic from "../assets/menu-burger.svg";
 import { Link } from "react-router-dom";
-// import ToggleMenuButton from "./ToggleMenuButton";
+import addPic from "../assets/add.svg";
 import '../App.css';
 
 function TopMenu() {
@@ -18,6 +18,7 @@ function TopMenu() {
     <div>
         <div className="topMenu">
             <img src={menuPic} alt="" className="menuPic" onClick={toggleSidebar}/>
+            <img src={addPic} alt="" className="menuPic"/>
         </div>
         <div className={`sideBarDiv ${sidebar ? 'show' : ''}`}>
             <Link to="/homepage2" className="link"><p>Home</p></Link>
