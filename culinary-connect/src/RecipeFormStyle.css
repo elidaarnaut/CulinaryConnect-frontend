@@ -1,0 +1,123 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  .body {
+    font-family: 'Poppins', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width: 80vw;
+    margin: auto;
+  }
+  
+  .recipe-form {
+    width: 100%;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    color: #f8f8f8;
+    border-radius: 10px;
+    padding: 30px 40px;
+    display: flex;
+    flex-direction: column; 
+    margin : 10px;
+    background-color: #f8f8f8;
+  }
+  
+  .recipe-form .form-header {
+    color: #ce2121;
+    font-size: 50px;
+    text-align: center;
+    margin: 5px;
+  }
+
+  .input-grid{
+    width: 100%;
+    align-items: flex-start;
+    padding: auto;
+    align-content: space-between;
+    margin-top:30px;
+  }
+
+  .form-input{
+    width: 100%;
+    margin: 0;
+  }
+
+  .file-input-wrapper {
+    position: relative;
+  }
+  
+  .file-input-label {
+    margin-bottom: 20px;
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #495974;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    text-align: center;
+  }
+  
+  .file-input {
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+  
+  .image-preview {
+    margin-top: 10px;
+  }
+  
+  .preview-image {
+    max-width: 100%; 
+    max-height: 200px; 
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    align-self: center;
+  }
+  
+  .error-message {
+    color: red;
+    font-size: 0.9em;
+  }
+  
+ .form-input Button {
+    width: 100%;
+    padding: 10px 20px;
+    background-color: #ce2121;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    font-weight: 700;
+    cursor: pointer;
+  }
+  
+  .form-input Button:hover {
+    background-color: #495974;
+    color: #fff;
+    border-color:#ce2121;
+  }
+
+@media only screen and (max-width: 768px){
+  .body {
+    width: 100%;
+  }
+
+  .recipe-form {
+    width: 90%;
+  }
+
+}
+
+ 

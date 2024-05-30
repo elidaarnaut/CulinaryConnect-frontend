@@ -1,5 +1,6 @@
 import '../App.css';
 import pancakePlaceholder from "../assets/pancakePlaceholder.jpg";
+import LikeButton from './LikeButton';
 
 function RecipeItem() {
     return (
@@ -10,7 +11,11 @@ function RecipeItem() {
                     <p>20 min</p>
                 </div>
             </div>
-            <h2 className='recipeTitle'>Title</h2>
+            <div className='recipeLikeSection'>
+                <h2 className='recipeTitle'>Title</h2>   
+                <LikeButton></LikeButton>
+            </div>
+            
            <div className='tagSlider'>
                <span className='tagItem'>Item</span>
                <span className='tagItem'>Item</span>

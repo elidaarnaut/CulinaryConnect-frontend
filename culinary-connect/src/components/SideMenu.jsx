@@ -14,7 +14,9 @@ function SideMenu() {
     return (
         <div className='sideMenu'>
             {/* <p className='logoText'>Culinary Connect</p> */}
-            <button className='addRecipeButton'>Add Recipe</button>
+            <NavLink to="/addRecipe">            
+                <button className='addRecipeButton'>Add Recipe</button>
+            </NavLink>
             <NavLink to="/homepage2" className='sideMenuItem' activeClassName="activeLink">
                 <img src={home} alt=''></img>
                 <p>Home</p>
