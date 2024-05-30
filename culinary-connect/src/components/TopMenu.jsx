@@ -18,7 +18,9 @@ function TopMenu() {
     <div>
         <div className="topMenu">
             <img src={menuPic} alt="" className="menuPic" onClick={toggleSidebar}/>
-            <img src={addPic} alt="" className="menuPic"/>
+            <Link to="/addRecipe">            
+                <img src={addPic} alt="" className="addPic"/>
+            </Link>
         </div>
         <div className={`sideBarDiv ${sidebar ? 'show' : ''}`}>
             <Link to="/homepage2" className="link"><p>Home</p></Link>
@@ -26,6 +28,8 @@ function TopMenu() {
             <Link to="/favorites" className="link"><p>Favorite</p></Link>
             <Link to="/profile" className="link"><p>Profile</p></Link>
             <Link to="/settings" className="link"><p>Settings</p></Link>
+            <Link to="/" className="link"><p>Log out</p></Link>
+
 
 
 

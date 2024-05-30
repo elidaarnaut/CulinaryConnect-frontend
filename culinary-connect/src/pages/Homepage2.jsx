@@ -25,7 +25,7 @@ function Homepage2() {
             <RecipeItems></RecipeItems>
 
           </div>
-          <h1 className="HP2Title">Trending Recipes</h1>
+          <h1 className="HP2Title">New Recipes</h1>
           <div className="trendingRecipes">
             <RecipeItems></RecipeItems>
             <RecipeItems></RecipeItems>
