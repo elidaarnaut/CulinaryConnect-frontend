@@ -3,6 +3,8 @@ import Homepage1 from "./pages/Homepage1";
 import Homepage2 from "./pages/Homepage2";
 import Signup from "./pages/Signup";
 import Login from "./pages/LoginForm";
+import ForgotPassword from './pages/ForgotPassword';
+import ResetPassword from './pages/ResetPassword';
 import ExplorePage from "./pages/ExplorePage";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import FavoritesPage from "./pages/FavoritesPage";
@@ -16,6 +18,8 @@ function App() {
         <Route path="/" element={<Homepage1 />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} /> 
+        <Route path="/forgot-password" element={<ForgotPassword />} />
+        <Route path="/resetpassword/:token" element={<ResetPassword />} /> 
         <Route path="/homepage2" element={<Homepage2 />} /> 
         <Route path="/explore" element={<ExplorePage />} />
         <Route path="/favorites" element={<FavoritesPage />} /> 

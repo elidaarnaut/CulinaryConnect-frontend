@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate  } from 'react-router-dom';
 
 import '../App.css';
 import home from "../assets/home.png";
@@ -8,9 +8,23 @@ import heart from "../assets/heart.png";
 import user from "../assets/user.png";
 import settings from "../assets/settings.png";
 import logout from "../assets/exit.svg";
-
+import { logoutUser } from '../services/ApiServices';
+import { useContext } from 'react';
+import { UserContext } from '../context/UserContext';
 
 function SideMenu() {
+    const { logout } = useContext(UserContext);
+    const navigate = useNavigate();
+
+    const handleLogout = async () => {
+        try{
+            await logoutUser();
+            logout();
+            navigate('/login');
+        }catch(error){
+            console.error('Failed to logout:', error);
+        }
+    }
     return (
         <div className='sideMenu'>
             {/* <p className='logoText'>Culinary Connect</p> */}
@@ -43,10 +57,10 @@ function SideMenu() {
             </NavLink>
             {/* <hr className='hrSideMenu'/> */}
 
-            <NavLink to="" className='sideMenuItem' activeClassName="activeLink">
+            <div onClick={handleLogout} className='sideMenuItem' activeClassName="activeLink">
                 <img src={logout} alt=''></img>
                 <p>Log out</p>
-            </NavLink>
+            </div>
         </div>
     );
 }
