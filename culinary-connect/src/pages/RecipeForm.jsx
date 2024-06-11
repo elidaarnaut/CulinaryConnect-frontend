@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import {
   TextField,
   Button,
@@ -9,151 +9,182 @@ import {
   Select,
   MenuItem,
 } from '@mui/material';
-import { useForm } from 'react-hook-form';
+import { useForm, useFieldArray } from 'react-hook-form';
+import { Link, useNavigate } from 'react-router-dom';
 import "../RecipeFormStyle.css";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'; // Correct import
-import { faArrowUp } from '@fortawesome/free-solid-svg-icons'; 
+import { createRecipe } from '../services/ApiServices';
 
 const RecipeForm = () => {
-  const { register, handleSubmit, formState: { errors } } = useForm(); 
-  const [selectedFile, setSelectedFile] = useState(null);
+  const { register, handleSubmit, control, formState: { errors } } = useForm();
+  const { fields, append, remove } = useFieldArray({
+    control,
+    name: 'ingredients'
+  });
 
-  const onSubmit = (data) => {
-    if (!data || Object.keys(data).length === 0) {
-      console.error("No data provided");
-      return;
-    }
-    
-    console.log("Recipe data:", data);
-  };
+  const [selectedFile, setSelectedFile] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
+  const [success, setSuccess] = useState(null);
+  const navigate = useNavigate();
 
   const onFileChange = (e) => {
-    const file = e.target.files[0];
-    setSelectedFile(file); 
+    setSelectedFile(e.target.files[0]);
+  };
+
+  const onSubmit = async (data) => {
+    setLoading(true);
+
+    // Create FormData 
+    const formDataToSend = new FormData();
+    formDataToSend.append("name", data.name);
+    data.ingredients.forEach((ingredient, index) => {
+      formDataToSend.append(`ingredients[${index}]`, ingredient.name);
+    });
+    formDataToSend.append("instructions", data.instructions);
+    formDataToSend.append("time", data.time);
+    formDataToSend.append("servings", data.servings);
+    formDataToSend.append("category", data.category);
+    formDataToSend.append("file", selectedFile);
+
+    try {
+      const response = await createRecipe(formDataToSend);
+      setLoading(false);
+      setSuccess("Recipe created!");
+      navigate('/homepage2');
+    } catch (error) {
+      console.error("Error creating Recipe:", error);
+      setError("Error creating Recipe. Please try again later.");
+      setLoading(false);
+    }
   };
 
   return (
     <div className='body'>
-    <form className="recipe-form" onSubmit={handleSubmit(onSubmit)}>
-      <Typography className="form-header" variant="h4">Share Your Recipe</Typography>
-      <Grid className='input-grid'container spacing={3}>
-        <Grid className='form-input' item xs={12} spacing={2}>
-          <TextField
-            className='text-field'
-            {...register('name', { required: "Recipe Name is required" })}
-            label="Recipe Name"
-            fullWidth
-            error={!!errors.name}
-            helperText={errors.name?.message}
-          />
-        </Grid>
-        
-        <Grid className='form-input' item xs={12} spacing={2}>
-          <TextField
-          className='text-field'
-            {...register('ingredients', { required: "Ingredients are required" })}
-            label="Ingredients"
-            multiline
-            rows={4}
-            fullWidth
-            error={!!errors.ingredients}
-            helperText={errors.ingredients?.message}
-          />
-        </Grid>
-
-        <Grid className='form-input' item xs={12} spacing={2}>
-          <TextField
-          className='text-field'
-            {...register('preparationSteps', { required: "Preparation steps are required" })}
-            label="Preparation Steps"
-            multiline
-            rows={4}
-            fullWidth
-            error={!!errors.preparationSteps}
-            helperText={errors.preparationSteps?.message}
-          />
-        </Grid>
-        
-        <Grid className='form-input' item xs={6}>
-          <TextField
-          className='text-field'
-            {...register('cookingTime', { required: "Cooking time is required" })}
-            label="Cooking Time (in minutes)"
-            type="number"
-            fullWidth
-            error={!!errors.cookingTime}
-            helperText={errors.cookingTime?.message}
-          />
-        </Grid>
-
-        <Grid className='form-input' item xs={6}>
-          <TextField
-          className='text-field'
-            {...register('servings', { required: "Servings are required" })}
-            label="Servings"
-            type="number"
-            fullWidth
-            error={!!errors.servings}
-            helperText={errors.servings?.message}
-          />
-        </Grid>
-
-        <Grid className='form-input' item xs={12} spacing={2}>
-          <FormControl fullWidth>
-            <InputLabel>Category</InputLabel>
-            <Select
-              {...register('category', { required: "Category is required" })}
-              error={!!errors.category}
-              defaultValue=""
-            >
-              <MenuItem value="Appetizer">Appetizer</MenuItem>
-              <MenuItem value="Main Course">Main Course</MenuItem>
-              <MenuItem value="Dessert">Dessert</MenuItem>
-            </Select>
-          </FormControl>
-        </Grid>
-
-        <Grid item xs={12}>
-          <div className="file-input-wrapper">
-            <label htmlFor="photo" className="file-input-label">
-              Upload Photo
-            </label>
-            <input
-              id="photo"
-              type="file"
-              accept=".png, .jpg, .jpeg"
-              style={{ display: 'none' }} // Hide the input
-              {...register("photo")}
-              onChange={onFileChange} // Update state when file changes
+      <form className="recipe-form" onSubmit={handleSubmit(onSubmit)}>
+        <Typography className="form-header" variant="h4">Share Your Recipe</Typography>
+        <Grid className='input-grid' container spacing={3}>
+          <Grid className='form-input' item xs={12}>
+            <TextField
+              className='text-field'
+              {...register('name', { required: "Recipe Name is required" })}
+              label="Recipe Name"
+              fullWidth
+              error={!!errors.name}
+              helperText={errors.name?.message}
             />
-            <Button
-              className="upload-button"
-              onClick={() => document.getElementById("photo").click()}
-            >
-              {selectedFile ? `Selected: ${selectedFile.name}` : ''}
-            </Button>
-          </div>
-
-          {selectedFile && (
-            <div className="image-preview">
-              <img
-                src={URL.createObjectURL(selectedFile)} // Generate a preview URL
-                alt="Preview"
-                className="preview-image"
-              />
-            </div>
-          )}
+          </Grid>
           
-          {errors.photo && <span className="error-message">{errors.photo.message}</span>}
-        </Grid>
+          {fields.map((field, index) => (
+            <Grid className='form-input' item xs={12} key={field.id}>
+              <TextField
+                className='text-field'
+                {...register(`ingredients.${index}.name`, { required: "Ingredient is required" })}
+                label={`Ingredient ${index + 1}`}
+                fullWidth
+                error={!!errors.ingredients?.[index]?.name}
+                helperText={errors.ingredients?.[index]?.name?.message}
+              />
+              <Button onClick={() => remove(index)}>Remove</Button>
+            </Grid>
+          ))}
+          <Grid item xs={12}>
+            <Button onClick={() => append({ name: '' })}>Add Ingredient</Button>
+          </Grid>
 
-        <Grid className='form-input' item xs={12}>
-          <Button className='submit-button' type="submit" variant="contained" color="primary">
-            Share Recipe
-          </Button>
+          <Grid className='form-input' item xs={12}>
+            <TextField
+              className='text-field'
+              {...register('instructions', { required: "Preparation steps are required" })}
+              label="Preparation Steps"
+              multiline
+              rows={4}
+              fullWidth
+              error={!!errors.instructions}
+              helperText={errors.instructions?.message}
+            />
+          </Grid>
+
+          <Grid className='form-input' item xs={6}>
+            <TextField
+              className='text-field'
+              {...register('time', { required: "Cooking time is required" })}
+              label="Cooking Time (in minutes)"
+              type="number"
+              fullWidth
+              error={!!errors.time}
+              helperText={errors.time?.message}
+            />
+          </Grid>
+
+          <Grid className='form-input' item xs={6}>
+            <TextField
+              className='text-field'
+              {...register('servings', { required: "Servings are required" })}
+              label="Servings"
+              type="number"
+              fullWidth
+              error={!!errors.servings}
+              helperText={errors.servings?.message}
+            />
+          </Grid>
+
+          <Grid className='form-input' item xs={12}>
+            <FormControl fullWidth>
+              <InputLabel>Category</InputLabel>
+              <Select
+                {...register('category', { required: "Category is required" })}
+                defaultValue=""
+                fullWidth
+                error={!!errors.category}
+              >
+                <MenuItem value="Appetizer">Appetizer</MenuItem>
+                <MenuItem value="Main Course">Main Course</MenuItem>
+                <MenuItem value="Dessert">Dessert</MenuItem>
+              </Select>
+            </FormControl>
+          </Grid>
+
+          <Grid item xs={12}>
+            <div className="file-input-wrapper">
+              <label htmlFor="photo" className="file-input-label">
+                Upload Photo
+              </label>
+              <input
+                id="photo"
+                type="file"
+                accept=".png, .jpg, .jpeg"
+                style={{ display: 'none' }} // Hide the input
+                {...register("photo", { required: "Photo is required" })}
+                onChange={onFileChange} // Update state when file changes
+              />
+              <Button
+                className="upload-button"
+                onClick={() => document.getElementById("photo").click()}
+              >
+                {selectedFile ? `Selected: ${selectedFile.name}` : 'Choose File'}
+              </Button>
+            </div>
+
+            {selectedFile && (
+              <div className="image-preview">
+                <img
+                  src={URL.createObjectURL(selectedFile)} // Generate a preview URL
+                  alt="Preview"
+                  className="preview-image"
+                />
+              </div>
+            )}
+            
+            {errors.photo && <span className="error-message">{errors.photo.message}</span>}
+          </Grid>
+
+          <Grid className='form-input' item xs={12}>
+            <Button className='submit-button' type="submit" variant="contained" color="primary">
+              {loading ? 'Submitting...' : 'Share Recipe'}
+            </Button>
+          </Grid>
         </Grid>
-      </Grid>
-    </form>
+      </form>
     </div>
   );
 };

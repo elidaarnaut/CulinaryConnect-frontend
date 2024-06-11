@@ -10,6 +10,8 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import FavoritesPage from "./pages/FavoritesPage";
 import ProfilePage from "./pages/ProfilePage";
 import SettingsPage from "./pages/SettingsPage";
+import RecipeForm from "./pages/RecipeForm";
+import SingleRecipe from "./pages/SingleRecipe";
 
 function App() {
   return (
@@ -21,6 +23,8 @@ function App() {
         <Route path="/forgot-password" element={<ForgotPassword />} />
         <Route path="/resetpassword/:token" element={<ResetPassword />} /> 
         <Route path="/homepage2" element={<Homepage2 />} /> 
+        <Route path="/addRecipe" element={<RecipeForm />} />
+        <Route path="/recipe/:id" element={<SingleRecipe />} />
         <Route path="/explore" element={<ExplorePage />} />
         <Route path="/favorites" element={<FavoritesPage />} /> 
         <Route path="/profile" element={<ProfilePage />} /> 

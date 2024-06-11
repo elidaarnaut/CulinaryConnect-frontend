@@ -4,27 +4,30 @@ import banner from "../assets/banner.jpg";
 import profilePhoto from "../assets/ProfilePhoto.svg";
 import RecipeItem from '../components/RecipeItem';
 import TopMenu from '../components/TopMenu';
-import { getUser } from '../services/ApiServices';
+import { getUserRecipes, getUser } from '../services/ApiServices';
 
 import "../App.css";
 
 function ProfilePage() {
     const [userName, setUserName] = useState('');
+    const [recipes, setRecipes] = useState([]);
 
     useEffect(() => {
         // Fetch user data 
         const fetchUserData = async () => {
             try {
-                const response = await getUser();
-                setUserName(response.data.name);
-            }catch(error){
+                const username = await getUser();
+                const userrecipes = await getUserRecipes();
+                setUserName(username.data.name);
+                setRecipes(userrecipes.data); // Assuming the recipes are stored in userrecipes.data
+            } catch (error) {
                 console.error('Error fetching user data : ', error);
             }
         };
-
+    
         fetchUserData();
-
     }, []);
+    
 
     return(
         <div className="appBodyHP2">
@@ -41,19 +44,14 @@ function ProfilePage() {
                     <h2 className='profileRecipeTitle'>{userName} Recipes</h2>
                     <hr />
                     <div className='exploreItemLayout'>
-                        <RecipeItem></RecipeItem>
-                        <RecipeItem></RecipeItem>
-                        <RecipeItem></RecipeItem>
-                        <RecipeItem></RecipeItem>
-                        <RecipeItem></RecipeItem>
-                        <RecipeItem></RecipeItem>
-                        <RecipeItem></RecipeItem>
+                        {/* Check if recipes exists before mapping */}
+                        {recipes && recipes.map(recipe => (
+                            <RecipeItem key={recipe._id} recipe={recipe} />
+                        ))}
                     </div>
                 
                 </div>
             </div>
-            
-            
         </div>
     );
 }

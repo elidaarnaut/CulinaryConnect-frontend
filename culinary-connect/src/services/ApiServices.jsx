@@ -105,3 +105,126 @@ export const updateUserPassword = async (passwordData) => {
         throw err;
     }
 };
+
+export const getRecipes = async () => {
+    try {
+        const response = await api.get('/recipes');
+        return response.data;
+    } catch (err) {
+        console.error("Error updating user password:", err);
+        throw err;
+    }
+}
+
+export const getRecipe = async (id) => { // Accepting id as a parameter
+    try {
+        const response = await api.get(`/recipes/${id}`); // Use id in the API call
+        return response.data;
+    } catch (err) {
+        console.error("Error fetching recipe:", err); // Fixed error message
+        throw err;
+    }
+}
+
+export const getNewRecipes = async () => {
+    try {
+        const token = getToken();
+        const response = await api.get('/recipes/new', {
+            headers: {
+                Authorization: `Bearer ${token}`,
+            },
+        });
+        return response.data;
+    } catch (err) {
+        console.error("Error fetching new recipes:", err); // Fixed error message
+        throw err;
+    }
+}
+
+export const getUserRecipes = async () => {
+    try {
+        const token = getToken(); // Get the token
+        const response = await api.get('/recipes/user', {
+            headers: {
+                Authorization: `Bearer ${token}` // Pass the token in the Authorization header
+            }
+        });
+        return response.data;
+    } catch (error) {
+        throw error;
+    }
+};
+
+export const getTopLikedRecipes = async () => {
+    try {
+        const token = getToken(); // Get the token
+        const response = await api.get('/recipes/topliked', {
+            headers: {
+                Authorization: `Bearer ${token}` // Pass the token in the Authorization header
+            }
+        });
+        return response.data;
+    } catch (error) {
+        throw error;
+    }
+};
+
+export const createRecipe = async (formData) => {
+    try {
+        const token = getToken();
+        const response = await api.post('/recipes', formData, {
+            headers: {
+                Authorization: `Bearer ${token}`,
+                'Content-Type': 'multipart/form-data' 
+            },
+        });
+        return response.data;
+    } catch (err) {
+        console.error("Error updating user password:", err);
+        throw err;
+    }
+};
+
+// Function to like a recipe
+export const likeRecipe = async (recipeId) => {
+    try {
+        const token = getToken(); // Get the token
+        const response = await api.put(`/like/${recipeId}/like`, {}, {
+            headers: {
+                Authorization: `Bearer ${token}` // Pass the token in the Authorization header
+            }
+        });
+        return response.data;
+    } catch (error) {
+        throw error;
+    }
+};
+
+// Function to unlike a recipe
+export const unlikeRecipe = async (recipeId) => {
+    try {
+        const token = getToken(); // Get the token
+        const response = await api.put(`/like/${recipeId}/unlike`, {}, {
+            headers: {
+                Authorization: `Bearer ${token}` // Pass the token in the Authorization header
+            }
+        });
+        return response.data;
+    } catch (error) {
+        throw error;
+    }
+};
+
+export const getLikedRecipes = async () => {
+    try {
+        const token = getToken(); // Get the token
+        const response = await api.get('/like/liked', {
+            headers: {
+                Authorization: `Bearer ${token}` // Pass the token in the Authorization header
+            }
+        });
+        return response.data;
+    } catch (error) {
+        throw error;
+    }
+};
