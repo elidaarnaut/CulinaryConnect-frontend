@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import time from "../assets/clock.svg";
+import servings from "../assets/restaurant.svg";
 
 const RecipeItem = ({ recipe }) => {
     const [photoUrl, setPhotoUrl] = useState(null);
@@ -24,11 +26,22 @@ const RecipeItem = ({ recipe }) => {
 
     return (
         <div className='recipeItem'>
-            <div className='cardImgContainer'>
-                <Link to={`/recipe/${recipe._id}`}>
-                    <h2 className='recipeTitle'>{recipe.name}</h2>
-                </Link>
-            </div>
+            {/* {photoUrl && <img src={photoUrl} alt={recipe.name} />} */}
+            <Link className = 'noLink alignment'  to={`/recipe/${recipe._id}`}>
+                <h2 className='recipeTitle'>{recipe.name}</h2>
+                <hr className='recipeHR'></hr>
+                <h3 className='recipeCategory'>{recipe.category}</h3>
+                <div className='recipeSideBySide'>
+                    <img src={time} alt="" />
+                    <h3 className='recipeTime'> {recipe.time} minutes</h3>
+                </div>
+                <div className='recipeSideBySide'>
+                    <img src={servings} alt="" />
+                    <h3 className='recipeTime'> {recipe.servings} servings</h3>
+                </div>
+                
+                
+            </Link>
         </div>
     );
 };

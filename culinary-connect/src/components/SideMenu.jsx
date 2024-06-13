@@ -11,6 +11,7 @@ import logout from "../assets/exit.svg";
 import { logoutUser } from '../services/ApiServices';
 import { useContext } from 'react';
 import { UserContext } from '../context/UserContext';
+import search from "../assets/search.png";
 
 function SideMenu() {
     const { logout } = useContext(UserContext);
@@ -28,9 +29,11 @@ function SideMenu() {
     return (
         <div className='sideMenu'>
             {/* <p className='logoText'>Culinary Connect</p> */}
+
             <NavLink to="/addRecipe">            
                 <button className='addRecipeButton'>Add Recipe</button>
             </NavLink>
+
             <NavLink to="/homepage2" className='sideMenuItem' activeClassName="activeLink">
                 <img src={home} alt=''></img>
                 <p>Home</p>
@@ -39,6 +42,11 @@ function SideMenu() {
             <NavLink to="/explore" className='sideMenuItem' activeClassName="activeLink">
                 <img src={explore} alt=''></img>
                 <p>Explore</p>
+            </NavLink>
+
+            <NavLink to="/search" className='sideMenuItem' activeClassName="activeLink">
+                <img src={search} alt=''></img>
+                <p>Search</p>
             </NavLink>
 
             <NavLink to="/favorites" className='sideMenuItem' activeClassName="activeLink">

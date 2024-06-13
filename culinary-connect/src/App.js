@@ -12,6 +12,8 @@ import ProfilePage from "./pages/ProfilePage";
 import SettingsPage from "./pages/SettingsPage";
 import RecipeForm from "./pages/RecipeForm";
 import SingleRecipe from "./pages/SingleRecipe";
+import SearchPage from "./pages/SearchPage";
+import AboutPage from "./pages/AboutPage";
 
 function App() {
   return (
@@ -29,6 +31,8 @@ function App() {
         <Route path="/favorites" element={<FavoritesPage />} /> 
         <Route path="/profile" element={<ProfilePage />} /> 
         <Route path="/settings" element={<SettingsPage />} /> 
+        <Route path="/search" element={<SearchPage />} /> 
+        <Route path="/about" element={<AboutPage />} />
 
       </Routes>
     </Router>

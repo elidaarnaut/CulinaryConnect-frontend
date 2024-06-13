@@ -13,6 +13,8 @@ import { useForm, useFieldArray } from 'react-hook-form';
 import { Link, useNavigate } from 'react-router-dom';
 import "../RecipeFormStyle.css";
 import { createRecipe } from '../services/ApiServices';
+import TopMenu from '../components/TopMenu';
+import SideMenu from '../components/SideMenu';
 
 const RecipeForm = () => {
   const { register, handleSubmit, control, formState: { errors } } = useForm();
@@ -59,7 +61,10 @@ const RecipeForm = () => {
   };
 
   return (
-    <div className='body'>
+    <div className="appBodyHP2">
+    <TopMenu></TopMenu>
+    <SideMenu></SideMenu>
+    <div className='next2SM body'>
       <form className="recipe-form" onSubmit={handleSubmit(onSubmit)}>
         <Typography className="form-header" variant="h4">Share Your Recipe</Typography>
         <Grid className='input-grid' container spacing={3}>
@@ -185,6 +190,7 @@ const RecipeForm = () => {
           </Grid>
         </Grid>
       </form>
+    </div>
     </div>
   );
 };

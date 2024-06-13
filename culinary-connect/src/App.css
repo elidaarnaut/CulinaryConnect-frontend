@@ -180,40 +180,42 @@ html {
 
 
 /* RECIPE ITEM CSS */
-
 .recipeItem {
   display: flex;
-
-  /* flex: 0 1 23%; Each item will take up 23% of the container width */
   box-sizing: border-box;
   margin: 10px;
-
-  width: 20%;
-  height: fit-content;
-  background-color: #f8f8f8;
+  width: 200px;
+  height: 300px;
+  background: rgb(0,0,0);
+  background: linear-gradient(135deg, rgba(0,0,0,1) 0%, rgba(50,9,9,1) 34%, rgba(214,40,40,1) 83%, rgba(241,150,127,1) 100%);
   border-radius: 20px;
   align-items: center;
   justify-content: center;
-  /* margin: auto; */
   flex-direction: column;
-  padding-top: 1vi;
+  padding: 20px;
   margin-top: 20px;
-  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;}
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+}
+
+.noLink {
+  text-decoration: none;
+}
 
 .recipeTitle {
-  align-self: start;
-  /* padding-left: 10%; */
-  margin-bottom: 0px;
+  color: #fff;
+  text-decoration: none;
+  text-align: center;
 }
 
 .cardImgContainer {
   position: relative;
   width: 75%;
-  height: 10vi;
+  height: 180px; /* Adjusted for better image display */
   border: 1px solid rgb(177, 177, 177);
   border-radius: 25px;
   overflow: hidden;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;}
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
 
 .cardImgContainer img {
   object-fit: cover;
@@ -221,65 +223,6 @@ html {
   height: 100%;
 }
 
-.recipeLikeSection {
-  display: flex;
-  justify-content: space-around;
-  flex-direction: row;
-  height: fit-content;
-  width: 90%;
-  margin-top: 10px;
-}
-
-.heartPic {
-  width: 24px;
-  height: 24px;
-  cursor: pointer;
-}
-
-.cookingTime {
-  position: absolute;
-  bottom: 0; /* Position it at the top */
-  height: 20%;
-  left: 0; /* Position it at the left */
-  background-color: rgba(255, 255, 255, 0.7); /* Adjust the background color and opacity */
-  padding: 0px 15px;
-  border-radius: 15px 15px 0px 0; /* Adjust the border-radius */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.cookingTime p {
-  font-weight: 600;
-}
-
-.tagSlider {
-  display: flex;
-  margin: auto;
-  margin-top: 15px;
-  margin-bottom: 25px;
-  width: 80%;
-  overflow-x: auto;
-
-}
-
-.tagSlider::-webkit-scrollbar {
-  display: none; /* Hide the scrollbar */
-}
-
-.tagItem {
-  background-color: #ffc7b1;
-  color: #333;
-  width: auto;
-  padding: 5px 10px;
-  border-radius: 20px;
-  padding-left: 10px;
-  padding-right: 10px;
-  margin-right: 10px; /* Adjust margin between tags */
-  white-space: nowrap; /* Prevent tags from wrapping to new line */
-  opacity: 1;
-  transition: opacity 0.5s ease;
-}
 
 /* SIDE MENU CSS */
 
@@ -338,7 +281,9 @@ html {
 .trendingRecipes {
   display: flex;
   flex-direction: row;
-  overflow-x: auto;
+  justify-content: center;
+  flex-wrap: wrap;
+  /* overflow-x: auto; */
   gap: 30px;
   padding: 15px;
   /* overflow: hidden; */
@@ -353,7 +298,7 @@ html {
 .next2SM {
   width: 85%;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   flex-direction: column;
   align-items: center;
 }
@@ -361,7 +306,8 @@ html {
 .next2SideMenu {
   display: flex;
   flex-direction: column;
-  width: 95%;
+  width: 85%;
+  margin-top: 20px;
   /* margin-left: 15vi;
   margin-bottom: 30px;
   padding-left: 20px;
@@ -392,7 +338,7 @@ html {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
   padding: 10px;
   gap: 20px;
 
@@ -526,7 +472,7 @@ html {
   display: flex;
   height: auto;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   /* padding-top: 80px; */
   /* padding-bottom: 80px; */
 }
@@ -735,6 +681,185 @@ html {
   margin-bottom: 5px;
 }
 
+/* General Settings Form Styling */
+.settingsForm {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  max-width: 500px;
+  width: 100%;
+  margin: 20px;
+}
+
+.majorHeading, .functionHeading {
+  font-weight: 600;
+  color: #d62828;
+}
+
+.settingsText {
+  color: #666;
+  padding: 10px 0;
+}
+
+.formGroup {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.settingsButton {
+  width: 100%;
+  padding: 10px;
+  background-color: #d62828;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.settingsButton:hover {
+  background-color: #b5221e;
+}
+
+.settingsButton:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* Loading, Error, Success Messages */
+.loadingMessage, .errorMessage, .successMessage {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.errorMessage {
+  color: #d62828;
+}
+
+.successMessage {
+  color: #28a745;
+}
+
+.settingsButton:hover {
+  background-color: #a51c1c;
+}
+
+.settingsButton:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.errorMessage {
+  color: #d62828; /* Error message in theme color */
+  text-align: center;
+}
+
+.successMessage {
+  color: #28a745; /* Success message in green */
+  text-align: center;
+}
+
+.loadingMessage {
+  text-align: center;
+  color: #666;
+}
+
+
+
+/* Styling for the search results section */
+.searchResults {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  padding: 20px;
+  background-color: transparen;
+  border-radius: 8px;
+  /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+}
+
+/* Styling for individual recipe items in the search results */
+.searchResults .recipeItem {
+  width: 200px;
+  max-width: 300px;
+  margin: 10px;
+  background-color: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  overflow: hidden;
+  transition: transform 0.2s;
+}
+
+.searchResults .recipeItem:hover {
+  transform: scale(1.05);
+}
+
+/* Specific styles for when search results are active */
+.searchResultsActive {
+  margin-top: 20px;
+  width: 100%;
+}
+
+.searchContainer{
+  display: flex;
+  flex-direction: column;
+
+}
+
+.recipeCategory {
+  color: #fff;
+  text-align: center;
+}
+
+.recipeTime {
+  color: #fff;
+  text-align: center;
+
+}
+
+.recipeSideBySide {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  align-items: center;
+
+}
+
+.recipeSideBySide img {
+  width: 15px;
+  height: auto;
+}
+
+.recipeHR {
+  width: 90%;
+  background-color: #fff;
+  margin: auto;
+  color: #fff;
+  margin: 10px auto;
+}
+
+.alignment {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  
+}
+
 
 
 @media only screen and (max-width: 768px){
@@ -873,6 +998,9 @@ html {
 
   .recipeTitle {
     font-size: 20px;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
   }
 
   .tagSlider {
@@ -886,6 +1014,13 @@ html {
   .next2SM {
     width: 100%;
   }
+
+  .heartPic {
+    width: 24px; /* Set the width */
+    height: 24px; /* Set the height */
+    cursor: pointer; /* Makes the icon clickable */
+}
+
 
   /* EXPLORE PAGE  */
   .exploreItemLayout, .exploreItemLayout1{

@@ -37,14 +37,14 @@ const ExplorePage = () => {
             <SideMenu />
             <div className='next2SM'>
                 <div className="next2SideMenu">
-                    <Search />
+                    <Search onSearchResults={(data) => setRecipes(data)} />
                     <h1 className="HP2Title" id='exploreTitle'>Explore</h1>
                     <hr />
                     {/* <SortBy /> */}
                     {isLoading && <p>Loading recipes...</p>}
                     {error && <p style={{ color: 'red' }}>{error}</p>}
                     {isLoading ? (
-                            <p>Loading recipes...</p>
+                            <p></p>
                         ) : (
                             <div className='exploreItemLayout'>
                                 {recipes.length > 0 && recipes.map(recipe => (

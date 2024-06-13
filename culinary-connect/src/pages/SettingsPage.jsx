@@ -74,13 +74,13 @@ function SettingsPage() {
             <SideMenu></SideMenu>
             <div className='next2SM'>
                 <div className="next2SideMenu">
-                    <Search></Search> 
+                    {/* <Search></Search>  */}
                     <h1 className="HP2Title">Settings</h1>
                     <hr />
                     <div className="settingsContents">
                         <div className="accSettings">
                             <br />
-                            <p className='functionHeading'>Change Profile Picture</p>
+                            {/* <p className='functionHeading'>Change Profile Picture</p>
                             <br />
                             <div className="ProfilePicSettings">
                                 <img src={profilePic} alt="Profile Photo" className="settingsProfilePic" />
@@ -89,38 +89,43 @@ function SettingsPage() {
                                     <button className="settingsButton">Upload Photo</button>
                                 </div>
                             </div>
-                            <hr />
-                            <p className="functionHeading">Password Change</p>
-                            <br />
-                            <p className="settingsText">Change your password to keep your account secure. You’ll need to enter your old password, then create a new one.</p>
-                            <form onSubmit={handleUpdatePassword}>
-                                <label>Current Password</label>
-                                <input name="currentPassword" type="password" value={formData.currentPassword} onChange={handleChange} required />
-                                <label>New Password</label>
-                                <input name="newPassword" type="password" value={formData.newPassword} onChange={handleChange} required />
-                                <button className="button settingsButton" type="submit" disabled={isLoading}>Change Password</button>
-                            </form>
-                            {isLoading && <p>Loading...</p>}
-                            {error && <p>Error: {error}</p>}
-                            {success && <p>{success}</p>}
-                            <hr/>
-                            <p className="majorHeading">UPDATE USER DETAILS</p>
-                            <br />
-                            <p className="settingsText">To change the user name and the email </p>
-                            <br />
-                            <p className="functionHeading">Update Account</p>
-                            <br />
-                            <form onSubmit={handleUpdateDetails}>
-                                <label>Name</label>
-                                <input name="name" type="text" value={formData.name} onChange={handleChange} />
-                                <label>Email</label>
-                                <input name="email" type="email" value={formData.email} onChange={handleChange} />
-                                <button className="button settingsButton" type="submit" disabled={isLoading}>Change Details</button>
-                            </form>
+                            <hr /> */}
+                            <div className="settingsForm">
+                                <p className="functionHeading">Change Your Password</p>
+                                <p className="settingsText">Change your password to keep your account secure. You’ll need to enter your old password, then create a new one.</p>
+                                <form onSubmit={handleUpdatePassword}>
+                                    <label htmlFor="currentPassword">Current Password</label>
+                                    <input id="currentPassword" name="currentPassword" type="password" value={formData.currentPassword} onChange={handleChange} required />
+
+                                    <label htmlFor="newPassword">New Password</label>
+                                    <input id="newPassword" name="newPassword" type="password" value={formData.newPassword} onChange={handleChange} required />
+
+                                    <button className='settingsButton' type="submit" disabled={isLoading}>Change Password</button>
+                                </form>
                                 {isLoading && <p>Loading...</p>}
-                                {error && <p>Error: {error}</p>}
+                                {error && <p style={{ color: 'red' }}>Error: {error}</p>}
                                 {success && <p>{success}</p>}
-                                <br />
+                            </div>
+                            <hr/>
+                            <div className="settingsForm">
+                                <h2 className="majorHeading">Update User Details</h2>
+                                <p className="settingsText">Change your username and email address.</p>
+                                <h3 className="functionHeading">Update Account</h3>
+                                <form onSubmit={handleUpdateDetails}>
+                                    <div className="formGroup">
+                                        <label htmlFor="name">Name:</label>
+                                        <input id="name" name="name" type="text" value={formData.name} onChange={handleChange} />
+                                    </div>
+                                    <div className="formGroup">
+                                        <label htmlFor="email">Email:</label>
+                                        <input id="email" name="email" type="email" value={formData.email} onChange={handleChange} />
+                                    </div>
+                                    <button className="settingsButton" type="submit" disabled={isLoading}>Change Details</button>
+                                </form>
+                                {isLoading && <p className="loadingMessage">Loading...</p>}
+                                {error && <p className="errorMessage">Error: {error}</p>}
+                                {success && <p className="successMessage">{success}</p>}
+                            </div>
                         </div>
                     </div>
                 </div>

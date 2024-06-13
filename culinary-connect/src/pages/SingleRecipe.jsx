@@ -1,12 +1,11 @@
-// src/pages/SingleRecipe.js
-
 import React, { useEffect, useState } from 'react';
 import TopMenu from "../components/TopMenu";
 import SideMenu from "../components/SideMenu";
 import { useParams } from 'react-router-dom';
-import { getRecipe } from '../services/ApiServices';
-import { likeRecipe, unlikeRecipe } from '../services/ApiServices';
+import { getRecipe, likeRecipe, unlikeRecipe } from '../services/ApiServices';
 import './SingleRecipe.css';
+import { ReactComponent as HeartOutline } from "../assets/heart.svg";
+import { ReactComponent as HeartFilled } from '../assets/heart-full.svg';
 
 const SingleRecipe = () => {
     const { id } = useParams();
@@ -36,10 +35,11 @@ const SingleRecipe = () => {
         try {
             if (isLiked) {
                 await unlikeRecipe(id);
+                setIsLiked(false);
             } else {
                 await likeRecipe(id);
+                setIsLiked(true);
             }
-            setIsLiked(!isLiked); // Toggle the liked state
         } catch (err) {
             console.error("Error toggling like:", err);
         }
@@ -78,8 +78,8 @@ const SingleRecipe = () => {
                 ) : (
                     <p className="recipeBy">Recipe by: Unknown</p>
                 )}
-                <button onClick={handleLikeToggle}>
-                   {isLiked ? "Unlike" : "Like"}
+                <button onClick={handleLikeToggle} style={{ border: 'none', background: 'none' }}>
+                    {isLiked ? <HeartFilled className="heartPic" /> : <HeartOutline className="heartPic" />}
                 </button>
             </div>
         </div>

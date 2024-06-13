@@ -228,3 +228,12 @@ export const getLikedRecipes = async () => {
         throw error;
     }
 };
+
+export const searchRecipe = async (query) => {
+    try {
+      const response = await api.get(`/recipes/search?q=${query}`);
+      return response.data;
+    } catch (error) {
+      throw error;
+    }
+  };

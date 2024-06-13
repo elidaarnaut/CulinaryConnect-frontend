@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { getNewRecipes , getTopLikedRecipes} from '../services/ApiServices';
+import { getNewRecipes, getTopLikedRecipes } from '../services/ApiServices';
 import "../App.css";
 import SideMenu from "../components/SideMenu";
 import Search from "../components/Search";
@@ -10,11 +10,14 @@ import TopMenu from "../components/TopMenu";
 function Homepage2() {
   const [newRecipes, setNewRecipes] = useState([]);
   const [trendingRecipes, setTrendingRecipes] = useState([]);
+  const [searchResults, setSearchResults] = useState([]);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [searchActive, setSearchActive] = useState(false);
 
   useEffect(() => {
     const fetchNewRecipes = async () => {
+      setSearchActive(false);
       setLoading(true);
       setError(null);
       try {
@@ -33,39 +36,60 @@ function Homepage2() {
     fetchNewRecipes();
   }, []);
 
+  const handleSearchResults = (results) => {
+    setSearchResults(results);
+    setSearchActive(false); // Activate search mode
+  };
+
   return (
     <div className="appBodyHP2">
       <TopMenu />
       <SideMenu />
       <div className="next2SM">
         <div className="next2SideMenu">
-          <Search />
-          <h1 className="HP2Title">Trending Recipes</h1>
-          <div className="trendingRecipes">
-            {loading && <p>Loading recipes...</p>}
-            {error && <p style={{ color: 'red' }}>{error}</p>}
-            {!loading && !error && trendingRecipes.length === 0 && (
-              <p>No trending recipes available.</p>
-            )}
-            {!loading && !error && trendingRecipes.length > 0 && (
-              trendingRecipes.map(recipe => (
-                <RecipeItems key={recipe._id} recipe={recipe} />
-              ))
-            )}
-          </div>
-          <h1 className="HP2Title">New Recipes</h1>
-          <div className="trendingRecipes">
-            {loading && <p>Loading recipes...</p>}
-            {error && <p style={{ color: 'red' }}>{error}</p>}
-            {!loading && !error && newRecipes.length === 0 && (
-              <p>No new recipes available.</p>
-            )}
-            {!loading && !error && newRecipes.length > 0 && (
-              newRecipes.map(recipe => (
-                <RecipeItems key={recipe._id} recipe={recipe} />
-              ))
-            )}
-          </div>
+          <Search onSearchResults={handleSearchResults} />
+          {searchActive ? (
+            <>
+              <div className="searchResults searchResultsActive">
+                <h1 className="HP2Title">Search Results</h1>
+                {/* {searchResults.length === 0 && (
+                  <p>No results found for your search query.</p>
+                )}
+                {searchResults.map((recipe) => (
+                  <RecipeItems key={recipe._id} recipe={recipe} className="recipeItem" />
+                ))} */}
+              </div>
+            </>
+          ) : (
+            <>
+              <h1 className="HP2Title">Trending Recipes</h1>
+              <div className="trendingRecipes">
+                {loading && <p>Loading recipes...</p>}
+                {error && <p style={{ color: 'red' }}>{error}</p>}
+                {!loading && !error && trendingRecipes.length === 0 && (
+                  <p>No trending recipes available.</p>
+                )}
+                {!loading && !error && trendingRecipes.length > 0 && (
+                  trendingRecipes.map(recipe => (
+                    <RecipeItems key={recipe._id} recipe={recipe} className="recipeItem" />
+                  ))
+                )}
+              </div>
+              <h1 className="HP2Title">New Recipes</h1>
+              <div className="trendingRecipes">
+                {loading && <p>Loading recipes...</p>}
+                {error && <p style={{ color: 'red' }}>{error}</p>}
+                {!loading && !error && newRecipes.length === 0 && (
+                  <p>No new recipes available.</p>
+                )}
+                {!loading && !error && newRecipes.length > 0 && (
+                  newRecipes.map(recipe => (
+                    <RecipeItems key={recipe._id} recipe={recipe} className="recipeItem" />
+                  ))
+                )}
+              </div>
+            </>
+          )}
           <Footer />
         </div>
       </div>

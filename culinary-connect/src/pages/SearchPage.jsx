@@ -1,16 +1,16 @@
-import React, { useState, useRef } from 'react';
+import React, { useState } from "react";
 import { searchRecipe } from "../services/ApiServices";
 import "../App.css";
 import searchIcon from "../assets/search.png";
 import RecipeItems from "../components/RecipeItem";
+import TopMenu from "../components/TopMenu";
+import SideMenu from "../components/SideMenu";
 
-function Search({ onSearchResults }) {
+function Search() {
   const [searchQuery, setSearchQuery] = useState("");
   const [searchResults, setSearchResults] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
-  const [showResults, setShowResults] = useState(false);
-  const searchContainerRef = useRef(null);
 
   const handleInputChange = (event) => {
     setSearchQuery(event.target.value);
@@ -18,14 +18,11 @@ function Search({ onSearchResults }) {
 
   const handleSearch = async (event) => {
     event.preventDefault();
-    if (!searchQuery) return; // Prevent search with empty query
     try {
       setLoading(true);
       setError(null);
       const results = await searchRecipe(searchQuery);
       setSearchResults(results.data);
-      // onSearchResults(results.data);
-      setShowResults(true); // Show results when search is performed
     } catch (error) {
       setError("Failed to search recipes.");
       console.error(error);
@@ -34,17 +31,29 @@ function Search({ onSearchResults }) {
     }
   };
 
-  const handleFocus = () => {
-    setShowResults(true);
-  };
+  const renderSearchResults = () => {
+    if (loading) {
+      return <p>Loading recipes...</p>;
+    }
 
-  const handleBlur = () => {
-    // Delay hiding results to allow interaction with them
-    setTimeout(() => setShowResults(false), 200);
+    if (error) {
+      return <p style={{ color: "red" }}>{error}</p>;
+    }
+
+    if (searchResults.length === 0) {
+      return <p>No recipes found.</p>;
+    }
+
+    return searchResults.map((recipe) => (
+      <RecipeItems key={recipe._id} recipe={recipe} />
+    ));
   };
 
   return (
-    <div className="searchContainer" ref={searchContainerRef}>
+    <div className="appBodyHP2"> 
+    <TopMenu />
+    <SideMenu />
+    <div className="next2SM searchContainer">
       <div className="searchBar">
         <form className="searchBarForm" onSubmit={handleSearch}>
           <input
@@ -54,23 +63,14 @@ function Search({ onSearchResults }) {
             name="search"
             value={searchQuery}
             onChange={handleInputChange}
-            onFocus={handleFocus}
-            onBlur={handleBlur}
           />
           <button type="submit" className="searchButton">
             <img src={searchIcon} alt="Search button icon" />
           </button>
         </form>
       </div>
-      {showResults && (loading || searchResults.length > 0 || error) && (
-        <div className="searchResults">
-          {loading && <p>Loading recipes...</p>}
-          {error && <p style={{ color: "red" }}>{error}</p>}
-          {!loading && !error && searchResults.map((recipe) => (
-            <RecipeItems key={recipe._id} recipe={recipe} />
-          ))}
-        </div>
-      )}
+      <div className="searchResults">{renderSearchResults()}</div>
+    </div>
     </div>
   );
 }
